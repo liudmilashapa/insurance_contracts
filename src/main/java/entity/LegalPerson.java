@@ -9,8 +9,7 @@ public class LegalPerson implements Customer {
 
     public LegalPerson(  String organizationName
                        , String address) {
-        if (organizationName==""||address=="")
-            throw new IllegalArgumentException("Invalid arguments");
+        argumentsIsValid(organizationName, address);
         this.organizationName=organizationName;
         this.address=address;
         this.status=PersonStatus.legalPerson;
@@ -27,6 +26,12 @@ public class LegalPerson implements Customer {
 
     public PersonStatus getStatus() {
         return status;
+    }
+
+    void argumentsIsValid(String organizationName
+                        , String address){
+        if (organizationName==""||address=="")
+            throw new IllegalArgumentException("Invalid arguments");
     }
 
 

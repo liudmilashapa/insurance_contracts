@@ -1,5 +1,8 @@
+import org.junit.*;
+/*Test;
 import org.junit.Assert;
-import org.junit.Test;
+import org.junit.Before;
+import org.junit.Before;*/
 import entity.*;
 import org.junit.rules.ExpectedException;
 
@@ -9,155 +12,178 @@ import java.util.HashMap;
 
 public class AppTest {
 
+    LocalDate date1;
+    LocalDate date2;
+    LocalDate date3;
+    LocalDate date4;
+    LocalDate date5;
+
+    LegalPerson customer1;
+
+    IndemnifiedPerson indemnifiedPerson1;
+    IndemnifiedPerson indemnifiedPerson2;
+    IndemnifiedPerson indemnifiedPerson3;
+    IndemnifiedPerson indemnifiedPerson4;
+
+
+
+    HashMap<Integer, IndemnifiedPerson> map1;
+
+    InsuranceContract insuranceContract1;
+
+    @Before
+    public void initialize() {
+
+        date1 = LocalDate.of(1999, 10, 10);
+        date2 = LocalDate.of(1999, 12, 9);
+        date3 = LocalDate.of(2000, 10, 10);
+        date4 = LocalDate.of(2010, 12, 9);
+        date5 = LocalDate.of(2018, 12, 9);
+
+        indemnifiedPerson1 = new IndemnifiedPerson(1, "Bob", "Ros", "Endy", 1000, date1);
+        indemnifiedPerson2 = new IndemnifiedPerson(2, "Liz", "Ros", "Bob", 2000, date2);
+        indemnifiedPerson3 = new IndemnifiedPerson(3, "Emi", "Ros", "Endy", 4000, date3);
+        indemnifiedPerson4 = new IndemnifiedPerson(2, "Min", "Ros", "Bob", 0.1, date4);
+
+        customer1 = new LegalPerson("BBC", "London");
+
+        map1 = new HashMap<Integer, IndemnifiedPerson>();
+
+        insuranceContract1 = new InsuranceContract(1, date3, date4, date5, customer1, map1);
+    }
+    @Rule
+    public ExpectedException thrown = ExpectedException.none();
+
 
     @Test
     public void nameCreationTest() {
 
-        Name name = new Name( "First", "Last", "Middle" );
-        Assert.assertEquals( name.getFullName(), "Last First Middle" );
-        Assert.assertEquals( name.getNameWithInitials(), "Last F.M." );
+        Name name1 = new Name( "First", "Last", "Middle" );
+        Assert.assertEquals( name1.getFullName(), "Last First Middle" );
+        Assert.assertEquals( name1.getNameWithInitials(), "Last F.M." );
+    }
+
+    @Test
+    public void invalidFirstNameCreationTest() throws IllegalArgumentException {
+
+        thrown.expect(IllegalArgumentException.class);
+        thrown.expectMessage("Invalid name");
+        Name name = new Name("", "Last", "Middle");
+    }
+
+    @Test
+    public void invalidLastNameCreationTest() throws IllegalArgumentException {
+
+        thrown.expect(IllegalArgumentException.class);
+        thrown.expectMessage("Invalid name");
+        Name name = new Name("First", "", "Middle");
     }
 
 
     @Test
-    public void legalPersonCreationTest() {
-        LegalPerson legalPerson1 = new LegalPerson("BBC", "London");
-        Assert.assertEquals(legalPerson1.getAddress(), "London");
-        Assert.assertEquals(legalPerson1.getName(), "BBC");
+    public void invalidLegalPersonCreationTest() throws IllegalArgumentException {
 
-
-        try{
-            LegalPerson legalPerson2 = new LegalPerson("", "");
-            LegalPerson legalPerson3 = new LegalPerson("BBC", "London");
-        }
-        catch (IllegalArgumentException ex){
-            Assert.assertEquals(ex.getMessage() ,"Invalid arguments");
-        }
+        thrown.expect(IllegalArgumentException.class);
+        thrown.expectMessage("Invalid arguments");
+        LegalPerson legalPerson = new LegalPerson("", "");
     }
 
     @Test
-    public void privatePersonCreationTest() {
-            PrivatePerson privatePerson1= new PrivatePerson("Bob", "Ros", "Endy", "Tokyo");
-            Assert.assertEquals(privatePerson1.getNameWithInitials(), "Ros B.E.");
-            Assert.assertEquals(privatePerson1.getAddress(), "Tokyo");
+    public void invalidPrivatePersonCreationTest() throws IllegalArgumentException {
+        thrown.expect(IllegalArgumentException.class);
+        thrown.expectMessage("Invalid address");
+        PrivatePerson privatePerson = new PrivatePerson("Bob", "Ros", "Endy", "");
         }
 
 
     @Test
-    public void indemnifiedPersonCreationTest() {
-        LocalDate date1 = LocalDate.of(1997, 10, 10);
-        LocalDate date2 = LocalDate.of(1995, 12, 9);
-        IndemnifiedPerson person1 = new IndemnifiedPerson(1, "Bob", "Ros", "Endy", 1000, date1);
-        Assert.assertEquals(person1.getId(), 1);
-        Assert.assertEquals(person1.getBirthDate(), date1);
-        Assert.assertEquals(person1.getCost(), 1000, 0.01);
-        Assert.assertEquals(person1.getName().getFullName(), "Ros Bob Endy");
-        try{
-        IndemnifiedPerson person2 = new IndemnifiedPerson(2, "", "", "", 2000, date2);
-        }
-        catch (IllegalArgumentException ex){
-            Assert.assertEquals(ex.getMessage() ,"Invalid name");
-        }
+    public void invalidDataIndemnifiedPersonCreationTest() throws IllegalArgumentException {
+
+        thrown.expect(IllegalArgumentException.class);
+        thrown.expectMessage("Invalid birth date");
+        IndemnifiedPerson person = new IndemnifiedPerson(2, "Bob", "Ros", "Endy", 2000, date5);
     }
 
     @Test
-    public void insuranceContractCreationTest() {
-        LocalDate date1 = LocalDate.of(1999, 10, 10);
-        LocalDate date2 = LocalDate.of(1999, 12, 9);
-        LocalDate date3 = LocalDate.of(2000, 10, 10);
-        LocalDate date4 = LocalDate.of(2010, 12, 9);
-        LocalDate date5 = LocalDate.of(2018, 12, 9);
+    public void invalidCostIndemnifiedPersonCreationTest() throws IllegalArgumentException {
 
-        LegalPerson customer1 = new LegalPerson("BBC", "London");
+        thrown.expect(IllegalArgumentException.class);
+        thrown.expectMessage("Invalid cost");
+        IndemnifiedPerson person = new IndemnifiedPerson(2, "Bob", "Ros", "Endy", -1, date3);
+    }
 
-        IndemnifiedPerson indemnifiedPerson1 = new IndemnifiedPerson(1, "Bob", "Ros", "Endy", 1000, date1);
-        IndemnifiedPerson indemnifiedPerson2 = new IndemnifiedPerson(2, "Liz", "Ros", "Bob", 2000, date2);
-        IndemnifiedPerson indemnifiedPerson3 = new IndemnifiedPerson(3, "Emi", "Ros", "Endy", 4000, date3);
-        IndemnifiedPerson indemnifiedPerson4 = new IndemnifiedPerson(2, "Min", "Ros", "Bob", 0.1, date4);
+    @Test
+    public void invalidIdIndemnifiedPersonCreationTest() throws IllegalArgumentException {
 
-        HashMap<Integer, IndemnifiedPerson> map1 = new HashMap<Integer, IndemnifiedPerson>();
+        thrown.expect(IllegalArgumentException.class);
+        thrown.expectMessage("Invalid id");
+        IndemnifiedPerson person = new IndemnifiedPerson(-1, "Bob", "Ros", "Endy", 2000, date3);
+    }
 
-        map1.put(indemnifiedPerson1.getId(), indemnifiedPerson1);
+    @Test
+    public void insuranceContractSumTest() {
 
-        InsuranceContract insuranceContract1 = new InsuranceContract(1, date3, date4, date5, customer1, map1);
+        insuranceContract1.addPerson(indemnifiedPerson1);
         Assert.assertEquals(insuranceContract1.insuredSum(), 1000, 0.1);
         Assert.assertEquals(insuranceContract1.insuredSumByLambda(), 1000, 0.1);
 
         insuranceContract1.addPerson(indemnifiedPerson2);
-       Assert.assertEquals(insuranceContract1.insuredSum(), 3000, 0.1);
+        Assert.assertEquals(insuranceContract1.insuredSum(), 3000, 0.1);
         Assert.assertEquals(insuranceContract1.insuredSumByLambda(), 3000, 0.1);
-
-
-
     }
+
     @Test
-    public void contractDateTest() {
+    public void invalidContractDateTest() throws IllegalArgumentException {
 
-            LocalDate date1 = LocalDate.of(1999, 10, 10);
-            LocalDate date2 = LocalDate.of(1999, 12, 9);
-            LocalDate date3 = LocalDate.of(2000, 10, 10);
-            LocalDate date4 = LocalDate.of(2010, 12, 9);
-            LocalDate date5 = LocalDate.of(2018, 12, 9);
+        thrown.expect(IllegalArgumentException.class);
+        thrown.expectMessage("Invalid date");
+        InsuranceContract insuranceContract = new InsuranceContract(1, date5, date2, date3, customer1, map1);
+    }
 
-            LegalPerson customer1 = new LegalPerson("BBC", "London");
-            IndemnifiedPerson indemnifiedPerson1 = new IndemnifiedPerson(1, "Bob", "Ros", "Endy", 1000, date1);
-            HashMap<Integer, IndemnifiedPerson> map1 = new HashMap<Integer, IndemnifiedPerson>();
-            map1.put(indemnifiedPerson1.getId(), indemnifiedPerson1);
+    @Test
+    public void invalidContractEffectiveDateTest() throws IllegalArgumentException {
 
-            try {
-                InsuranceContract insuranceContract2 = new InsuranceContract(1, date4, date5, date3, customer1, map1);
-            } catch (IllegalArgumentException ex) {
-                Assert.assertEquals(ex.getMessage(), "Invalid date");
-            }
+        thrown.expect(IllegalArgumentException.class);
+        thrown.expectMessage("Invalid date");
+        InsuranceContract insuranceContract = new InsuranceContract(1, date4, date3, date5, customer1, map1);
+    }
 
-            try {
-                InsuranceContract insuranceContract3 = new InsuranceContract(1, date1, date2, date3, customer1, map1);
-            } catch (DateTimeException ex) {
-                Assert.assertEquals(ex.getMessage(), "Date of birth should be succeed contract date");
-            }
-        }
+    @Test
+    public void invalidContractExpireDateTest() throws IllegalArgumentException {
+
+        thrown.expect(IllegalArgumentException.class);
+        thrown.expectMessage("Invalid date");
+        InsuranceContract insuranceContract = new InsuranceContract(1, date4, date5, date3, customer1, map1);
+    }
+
+    @Test
+    public void invalidBirthDateContractDateTest() throws DateTimeException {
+
+        thrown.expect(DateTimeException.class);
+        thrown.expectMessage("Date of birth should be succeed contract date");
+        InsuranceContract insuranceContract = new InsuranceContract(1, date1, date2, date3, customer1, map1);
+        insuranceContract.addPerson(indemnifiedPerson3);
+    }
 
     @Test
     public void addPersonTest() {
 
-        LocalDate date1 = LocalDate.of(1999, 10, 10);
-        LocalDate date2 = LocalDate.of(1999, 12, 9);
-        LocalDate date3 = LocalDate.of(2000, 10, 10);
-        LocalDate date4 = LocalDate.of(2010, 12, 9);
-        LocalDate date5 = LocalDate.of(2018, 12, 9);
-
-        IndemnifiedPerson indemnifiedPerson1 = new IndemnifiedPerson(1, "Bob", "Ros", "Endy", 1000, date1);
-        IndemnifiedPerson indemnifiedPerson2 = new IndemnifiedPerson(2, "Liz", "Ros", "Bob", 2000, date2);
-        IndemnifiedPerson indemnifiedPerson3 = new IndemnifiedPerson(3, "Emi", "Ros", "Endy", 4000, date3);
-        IndemnifiedPerson indemnifiedPerson4 = new IndemnifiedPerson(2, "Min", "Ros", "Bob", 0.1, date4);
-
-
-        HashMap<Integer, IndemnifiedPerson> map1 = new HashMap<Integer, IndemnifiedPerson>();
-        map1.put(indemnifiedPerson1.getId(), indemnifiedPerson1);
-        Assert.assertEquals(map1.size(), 1);
-
-        LegalPerson customer1 = new LegalPerson("BBC", "London");
-
-
-        InsuranceContract insuranceContract1 = new InsuranceContract(1, date3, date4, date5, customer1, map1);
-
-        try {
-            insuranceContract1.addPerson(indemnifiedPerson2);
-        } catch (IllegalArgumentException ex) {
-            Assert.assertEquals(ex.getMessage(), "This person has been added");
+        thrown.expect(IllegalArgumentException.class);
+        thrown.expectMessage("This person has been added");
+        insuranceContract1.addPerson(indemnifiedPerson1);
+        insuranceContract1.addPerson(indemnifiedPerson1);
         }
 
+    @Test
+    public void findPersonTest() {
 
+        insuranceContract1.addPerson(indemnifiedPerson1);
+        insuranceContract1.addPerson(indemnifiedPerson2);
         Assert.assertEquals(insuranceContract1.findPerson(2), indemnifiedPerson2);
-
         Assert.assertEquals(insuranceContract1.findPerson(3), null);
-
         Assert.assertEquals(map1.size(), 2);
-
     }
-
-
-    }
+}
 
 
 

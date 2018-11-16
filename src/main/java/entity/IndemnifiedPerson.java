@@ -16,6 +16,8 @@ public class IndemnifiedPerson {
             , double cost
             , LocalDate birthDate) {
         birthDateIsValid(birthDate);
+        costIsValid(cost);
+        idIsValid(id);
         this.id=id;
         this.name = new Name(firstName, lastName, middleName);
         this.cost = cost;
@@ -51,6 +53,17 @@ public class IndemnifiedPerson {
         if (birthDate.isEqual(LocalDate.now()) || birthDate.isAfter(LocalDate.now()))
             throw new IllegalArgumentException("Invalid birth date");
     }
+
+    private void costIsValid(double cost) {
+        if (cost<=0)
+            throw new IllegalArgumentException("Invalid cost");
+    }
+
+    private void idIsValid(int id) {
+        if (id<=0)
+            throw new IllegalArgumentException( "Invalid id");
+    }
+
 
 
 }

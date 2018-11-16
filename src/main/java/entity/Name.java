@@ -6,9 +6,10 @@ public class Name {
     private String lastName;
     private String middleName;
 
-    public Name(String firstName, String lastName, String middleName){
-        if (firstName==""||lastName==""||middleName=="")
-            throw new IllegalArgumentException("Invalid name");
+    public Name(  String firstName
+                , String lastName
+                , String middleName){
+        argumentsIsValid(firstName, lastName, middleName);
         this.firstName = firstName;
         this.lastName = lastName;
         this.middleName = middleName;
@@ -18,34 +19,36 @@ public class Name {
         return firstName;
     }
 
-    public String getLastName(){
-        return lastName;
-    }
+    public String getLastName(){return lastName; }
 
     public String getMiddleName() { return middleName; }
 
     public String getFullName(){
-        StringBuilder fullName = new StringBuilder(getLastName());
-        fullName.append(' ');
-        fullName.append(getFirstName());
-        fullName.append(' ');
-        fullName.append(getMiddleName());
-
-    return  fullName.toString();
+        return new StringBuilder(getLastName())
+                    .append(' ')
+                    .append(getFirstName())
+                    .append(' ')
+                    .append(getMiddleName())
+                    .toString();
     }
 
     public String getNameWithInitials(){
-        StringBuilder nameWithInitials = new StringBuilder(getLastName());
-        nameWithInitials.append(' ');
-        nameWithInitials.append(getFirstName().charAt(0));
-        nameWithInitials.append(".");
-        nameWithInitials.append(getMiddleName().charAt(0));
-        nameWithInitials.append('.');
-        return  nameWithInitials.toString();
+        return new StringBuilder(getLastName())
+                      .append(' ')
+                      .append(getFirstName().charAt(0))
+                      .append(".")
+                      .append(getMiddleName().charAt(0))
+                      .append('.')
+                      .toString();
     }
     public int compareTo(Name name2){
         return this.getFullName().compareTo(name2.getFullName());
     }
+
+    void argumentsIsValid(String firstName
+                        , String lastName
+                        , String middleName){
+        if (lastName ==""||firstName==""||middleName =="")
+            throw new IllegalArgumentException("Invalid name");
+    }
 }
-
-

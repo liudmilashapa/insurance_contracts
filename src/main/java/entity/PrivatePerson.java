@@ -7,9 +7,10 @@ public class PrivatePerson implements Customer {
     private PersonStatus status;
 
     public  PrivatePerson( String firstName
-            , String lastName
-            , String middleName
-            , String address){
+                         , String lastName
+                         , String middleName
+                         , String address){
+        argumentsIsValid(address);
         this.name = new Name (firstName, lastName, middleName);
         this.address = address;
         this.status = PersonStatus.privatePerson;
@@ -27,8 +28,11 @@ public class PrivatePerson implements Customer {
         return address;
     }
 
-    public PersonStatus getStatus() {
-        return status;
+    public PersonStatus getStatus() { return status; }
+
+    void argumentsIsValid(String address){
+        if (address=="")
+            throw new IllegalArgumentException("Invalid address");
     }
 
 }

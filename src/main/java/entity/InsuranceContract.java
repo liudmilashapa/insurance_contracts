@@ -13,12 +13,13 @@ public class InsuranceContract {
     private Customer customer;
     private HashMap < Integer, IndemnifiedPerson > indemnifiedPersonCollection;
 
-    public InsuranceContract(int contractId
-                    , LocalDate contractDate
-                    , LocalDate contractEffectiveDate
-                    , LocalDate contractExpireDate
-                    , Customer customer
-                    , HashMap indemnifiedPersonCollection){
+    public InsuranceContract(  int contractId
+                             , LocalDate contractDate
+                             , LocalDate contractEffectiveDate
+                             , LocalDate contractExpireDate
+                             , Customer customer
+                             , HashMap indemnifiedPersonCollection){
+        contractIdIsValid(contractId);
         contractDateIsValid(  contractDate
                             , contractEffectiveDate
                             , contractExpireDate);
@@ -58,13 +59,9 @@ public class InsuranceContract {
     }
 
     public void addPerson(IndemnifiedPerson person) {
-        if(indemnifiedPersonCollection.containsKey(person.getId())){
-
-            throw new IllegalArgumentException("This person has been added");
-        }
-        else {
-            indemnifiedPersonCollection.put(person.getId(), person);
-        }
+        indemnifiedPersonDateIsValid(person);
+        indemnifiedPersonIdIsValid(person);
+        indemnifiedPersonCollection.put(person.getId(), person);
     }
 
     public IndemnifiedPerson findPerson(int id){
@@ -106,11 +103,16 @@ public class InsuranceContract {
     }
 
 
+    private void contractIdIsValid(int id){
+        if(id<=0)
+            throw new IllegalArgumentException ("Invalid id");
+    }
+
     private void contractDateIsValid( LocalDate contractDate
                                     , LocalDate contractEffectiveDate
                                     , LocalDate contractExpireDate){
-        boolean condition1 = contractDate.isBefore(contractExpireDate)
-                          || contractDate.isEqual(contractExpireDate);
+        boolean condition1 = contractDate.isBefore(contractEffectiveDate)
+                          || contractDate.isEqual(contractEffectiveDate);
         boolean condition2 = contractEffectiveDate.isBefore(contractExpireDate)
                           || contractEffectiveDate.isEqual(contractExpireDate);
         if(!(( condition1 ) && ( condition2))) {
@@ -127,11 +129,20 @@ public class InsuranceContract {
         if (indemnifiedPersonCollection == null){
             throw new NullPointerException ();}
         for (IndemnifiedPerson  person : indemnifiedPersonCollection.values() ){
-            if(person.getBirthDate().isAfter(contractDate)) {
-                throw new DateTimeException("Date of birth should be succeed contract date");
+           indemnifiedPersonDateIsValid(person);
             }
-        }
+     }
+
+    private void indemnifiedPersonDateIsValid(IndemnifiedPerson person) {
+        boolean cond1= person.getBirthDate().isAfter(contractDate);
+        if (cond1)
+            throw new DateTimeException("Date of birth should be succeed contract date");
     }
+
+    private void indemnifiedPersonIdIsValid(IndemnifiedPerson person) {
+        if(indemnifiedPersonCollection.containsKey(person.getId()))
+            throw new IllegalArgumentException("This person has been added");
+        }
 
     public double insuredSum(){
         double sum = 0;

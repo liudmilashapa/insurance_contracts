@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="7" failures="0" name="AppTest" time="0.053" errors="0" skipped="0">
+<testsuite tests="15" failures="0" name="AppTest" time="0.093" errors="0" skipped="0">
   <properties>
     <property name="idea.version" value="2018.2"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
@@ -64,11 +64,19 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="AppTest" name="nameCreationTest" time="0.01"/>
-  <testcase classname="AppTest" name="legalPersonCreationTest" time="0"/>
-  <testcase classname="AppTest" name="indemnifiedPersonCreationTest" time="0.043"/>
+  <testcase classname="AppTest" name="invalidBirthDateContractDateTest" time="0.093"/>
+  <testcase classname="AppTest" name="nameCreationTest" time="0"/>
+  <testcase classname="AppTest" name="invalidContractDateTest" time="0"/>
+  <testcase classname="AppTest" name="invalidLegalPersonCreationTest" time="0"/>
+  <testcase classname="AppTest" name="insuranceContractSumTest" time="0"/>
+  <testcase classname="AppTest" name="findPersonTest" time="0"/>
+  <testcase classname="AppTest" name="invalidContractExpireDateTest" time="0"/>
+  <testcase classname="AppTest" name="invalidCostIndemnifiedPersonCreationTest" time="0"/>
+  <testcase classname="AppTest" name="invalidFirstNameCreationTest" time="0"/>
+  <testcase classname="AppTest" name="invalidDataIndemnifiedPersonCreationTest" time="0"/>
+  <testcase classname="AppTest" name="invalidLastNameCreationTest" time="0"/>
   <testcase classname="AppTest" name="addPersonTest" time="0"/>
-  <testcase classname="AppTest" name="contractDateTest" time="0"/>
-  <testcase classname="AppTest" name="privatePersonCreationTest" time="0"/>
-  <testcase classname="AppTest" name="insuranceContractCreationTest" time="0"/>
+  <testcase classname="AppTest" name="invalidContractEffectiveDateTest" time="0"/>
+  <testcase classname="AppTest" name="invalidPrivatePersonCreationTest" time="0"/>
+  <testcase classname="AppTest" name="invalidIdIndemnifiedPersonCreationTest" time="0"/>
 </testsuite>
