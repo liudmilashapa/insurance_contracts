@@ -16,6 +16,11 @@ public class PrivatePerson implements Customer {
         this.status = PersonStatus.privatePerson;
     }
 
+    public Name getNameAsObject()
+    {
+        return name;
+    }
+
     public String getName(){
         return name.getFullName();
     }

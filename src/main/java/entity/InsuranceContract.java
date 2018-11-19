@@ -23,14 +23,15 @@ public class InsuranceContract {
         contractDateIsValid(  contractDate
                             , contractEffectiveDate
                             , contractExpireDate);
-        customerIsValid(customer);
-        indemnifiedPersonCollectionIsValid(indemnifiedPersonCollection, contractDate);
 
         this.contractId = contractId;
         this.contractDate = contractDate;
         this.contractEffectiveDate = contractEffectiveDate;
         this.contractExpireDate = contractExpireDate;
+
+        customerIsValid(customer);
         this.customer = customer;
+        indemnifiedPersonCollectionIsValid(indemnifiedPersonCollection, contractDate);
         this.indemnifiedPersonCollection = indemnifiedPersonCollection;
     }
 

@@ -6,11 +6,8 @@ import java.util.HashMap;
 import java.util.HashSet;
 import entity.*;
 
-//*--------------------------------------------------------------------------------------------------------------*//
 
 public class Demo {
-
-//*--------------------------------------------------------------------------------------------------------------*//
 
 
 
@@ -48,7 +45,6 @@ public class Demo {
         myMap.put(person2.getId(),person2);
         InsuranceContract contract1 = new InsuranceContract(1, date2, date3, date4, customer, myMap);
 
-//*--------------------------------------------------------------------------------------------------------------*//
 
         outputContractInfo(contract1);
         outputCustomer(contract1);

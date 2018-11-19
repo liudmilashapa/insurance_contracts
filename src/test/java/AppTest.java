@@ -4,11 +4,21 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Before;*/
 import entity.*;
+import utils.*;
 import org.junit.rules.ExpectedException;
 
+import java.io.IOException;
 import java.time.DateTimeException;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Collection;
+import java.util.Iterator;
+
+import java.io.Reader;
+import java.io.BufferedWriter;
+import java.nio.file.Paths;
+import java.nio.file.Files;
 
 public class AppTest {
 
@@ -26,10 +36,11 @@ public class AppTest {
     IndemnifiedPerson indemnifiedPerson4;
 
 
-
     HashMap<Integer, IndemnifiedPerson> map1;
 
     InsuranceContract insuranceContract1;
+
+    String path;
 
     @Before
     public void initialize() {
@@ -50,6 +61,8 @@ public class AppTest {
         map1 = new HashMap<Integer, IndemnifiedPerson>();
 
         insuranceContract1 = new InsuranceContract(1, date3, date4, date5, customer1, map1);
+
+        path =  "./test.csv";
     }
     @Rule
     public ExpectedException thrown = ExpectedException.none();
@@ -59,6 +72,7 @@ public class AppTest {
     public void nameCreationTest() {
 
         Name name1 = new Name( "First", "Last", "Middle" );
+
         Assert.assertEquals( name1.getFullName(), "Last First Middle" );
         Assert.assertEquals( name1.getNameWithInitials(), "Last F.M." );
     }
@@ -68,6 +82,7 @@ public class AppTest {
 
         thrown.expect(IllegalArgumentException.class);
         thrown.expectMessage("Invalid name");
+
         Name name = new Name("", "Last", "Middle");
     }
 
@@ -76,6 +91,7 @@ public class AppTest {
 
         thrown.expect(IllegalArgumentException.class);
         thrown.expectMessage("Invalid name");
+
         Name name = new Name("First", "", "Middle");
     }
 
@@ -85,6 +101,7 @@ public class AppTest {
 
         thrown.expect(IllegalArgumentException.class);
         thrown.expectMessage("Invalid arguments");
+
         LegalPerson legalPerson = new LegalPerson("", "");
     }
 
@@ -92,6 +109,7 @@ public class AppTest {
     public void invalidPrivatePersonCreationTest() throws IllegalArgumentException {
         thrown.expect(IllegalArgumentException.class);
         thrown.expectMessage("Invalid address");
+
         PrivatePerson privatePerson = new PrivatePerson("Bob", "Ros", "Endy", "");
         }
 
@@ -101,6 +119,7 @@ public class AppTest {
 
         thrown.expect(IllegalArgumentException.class);
         thrown.expectMessage("Invalid birth date");
+
         IndemnifiedPerson person = new IndemnifiedPerson(2, "Bob", "Ros", "Endy", 2000, date5);
     }
 
@@ -109,6 +128,7 @@ public class AppTest {
 
         thrown.expect(IllegalArgumentException.class);
         thrown.expectMessage("Invalid cost");
+
         IndemnifiedPerson person = new IndemnifiedPerson(2, "Bob", "Ros", "Endy", -1, date3);
     }
 
@@ -117,6 +137,7 @@ public class AppTest {
 
         thrown.expect(IllegalArgumentException.class);
         thrown.expectMessage("Invalid id");
+
         IndemnifiedPerson person = new IndemnifiedPerson(-1, "Bob", "Ros", "Endy", 2000, date3);
     }
 
@@ -124,10 +145,12 @@ public class AppTest {
     public void insuranceContractSumTest() {
 
         insuranceContract1.addPerson(indemnifiedPerson1);
+
         Assert.assertEquals(insuranceContract1.insuredSum(), 1000, 0.1);
         Assert.assertEquals(insuranceContract1.insuredSumByLambda(), 1000, 0.1);
 
         insuranceContract1.addPerson(indemnifiedPerson2);
+
         Assert.assertEquals(insuranceContract1.insuredSum(), 3000, 0.1);
         Assert.assertEquals(insuranceContract1.insuredSumByLambda(), 3000, 0.1);
     }
@@ -137,6 +160,7 @@ public class AppTest {
 
         thrown.expect(IllegalArgumentException.class);
         thrown.expectMessage("Invalid date");
+
         InsuranceContract insuranceContract = new InsuranceContract(1, date5, date2, date3, customer1, map1);
     }
 
@@ -145,6 +169,7 @@ public class AppTest {
 
         thrown.expect(IllegalArgumentException.class);
         thrown.expectMessage("Invalid date");
+
         InsuranceContract insuranceContract = new InsuranceContract(1, date4, date3, date5, customer1, map1);
     }
 
@@ -153,6 +178,7 @@ public class AppTest {
 
         thrown.expect(IllegalArgumentException.class);
         thrown.expectMessage("Invalid date");
+
         InsuranceContract insuranceContract = new InsuranceContract(1, date4, date5, date3, customer1, map1);
     }
 
@@ -161,6 +187,7 @@ public class AppTest {
 
         thrown.expect(DateTimeException.class);
         thrown.expectMessage("Date of birth should be succeed contract date");
+
         InsuranceContract insuranceContract = new InsuranceContract(1, date1, date2, date3, customer1, map1);
         insuranceContract.addPerson(indemnifiedPerson3);
     }
@@ -170,6 +197,7 @@ public class AppTest {
 
         thrown.expect(IllegalArgumentException.class);
         thrown.expectMessage("This person has been added");
+
         insuranceContract1.addPerson(indemnifiedPerson1);
         insuranceContract1.addPerson(indemnifiedPerson1);
         }
@@ -179,10 +207,93 @@ public class AppTest {
 
         insuranceContract1.addPerson(indemnifiedPerson1);
         insuranceContract1.addPerson(indemnifiedPerson2);
+
         Assert.assertEquals(insuranceContract1.findPerson(2), indemnifiedPerson2);
         Assert.assertEquals(insuranceContract1.findPerson(3), null);
         Assert.assertEquals(map1.size(), 2);
     }
+
+    @Test
+    public void writeAndReadTest() {
+
+
+        insuranceContract1.addPerson(indemnifiedPerson1);
+        insuranceContract1.addPerson(indemnifiedPerson2);
+
+        {
+            try {
+                BufferedWriter bufferedWriter = Files.newBufferedWriter(Paths.get(path));
+                InsuranceWriter writer = new InsuranceWriter(bufferedWriter);
+
+                writer.write(insuranceContract1);
+            }
+            catch (IOException exception)
+            {
+                Assert.assertTrue(false);
+            }
+        }
+
+        {
+            try{
+                Reader bufferedReader = Files.newBufferedReader(Paths.get(path));
+                InsuranceReader reader = new InsuranceReader(bufferedReader);
+
+                ArrayList< InsuranceContract> contractsList = reader.read();
+
+                Assert.assertEquals(contractsList.size(),1);
+
+                InsuranceContract resultContract = contractsList.get(0);
+
+                Assert.assertEquals(insuranceContract1.getContractId(), resultContract.getContractId());
+                Assert.assertEquals( insuranceContract1.getContractDate(), resultContract.getContractDate());
+                Assert.assertEquals(
+                          insuranceContract1.getContractEffectiveDate()
+                        , resultContract.getContractEffectiveDate()
+                );
+                Assert.assertEquals(
+                          insuranceContract1.getContractExpireDate()
+                        , resultContract.getContractExpireDate()
+                );
+
+
+                Customer expectedCustomer = insuranceContract1.getCustomer();
+                Customer resultCustomer = resultContract.getCustomer();
+
+                Assert.assertEquals( expectedCustomer.getStatus(), resultCustomer.getStatus() );
+                Assert.assertEquals( expectedCustomer.getName(), resultCustomer.getName() );
+                Assert.assertEquals( expectedCustomer.getAddress(), resultCustomer.getAddress() );
+
+                Collection< IndemnifiedPerson > expectedContainer = insuranceContract1.getIndemnifiedPersonCollection().values();
+                Collection< IndemnifiedPerson > resultContainer = resultContract.getIndemnifiedPersonCollection().values();
+
+                Assert.assertEquals( expectedContainer.size(), resultContainer.size() );
+
+                Iterator<IndemnifiedPerson> expectedIterator = expectedContainer.iterator();
+                Iterator<IndemnifiedPerson> resultIterator = resultContainer.iterator();
+
+                IndemnifiedPerson expectedPerson1 = expectedIterator.next();
+                IndemnifiedPerson resultPerson1 = resultIterator.next();
+
+                Assert.assertEquals( expectedPerson1.getId(), resultPerson1.getId() );
+                Assert.assertEquals( expectedPerson1.getName().getFullName(), resultPerson1.getName().getFullName() );
+                Assert.assertEquals( expectedPerson1.getBirthDate(), resultPerson1.getBirthDate() );
+                Assert.assertTrue( Math.abs( expectedPerson1.getCost() - resultPerson1.getCost() ) < 0.01 );
+
+                IndemnifiedPerson expectedPerson2 = expectedIterator.next();
+                IndemnifiedPerson resultPerson2 = resultIterator.next();
+
+                Assert.assertEquals( expectedPerson2.getId(), resultPerson2.getId() );
+                Assert.assertEquals( expectedPerson2.getName().getFullName(), resultPerson2.getName().getFullName() );
+                Assert.assertEquals( expectedPerson2.getBirthDate(), resultPerson2.getBirthDate() );
+                Assert.assertTrue( Math.abs( expectedPerson2.getCost() - resultPerson2.getCost() ) < 0.01 );
+            }
+            catch (IOException exception)
+            {
+                Assert.assertTrue(false);
+            }
+        }
+    }
+
 }
 
 

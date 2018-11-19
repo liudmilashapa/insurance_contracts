@@ -24,6 +24,19 @@ public class IndemnifiedPerson {
         this.birthDate = birthDate;
     }
 
+    public IndemnifiedPerson(int id
+            , Name name
+            , double cost
+            , LocalDate birthDate) {
+        birthDateIsValid(birthDate);
+        costIsValid(cost);
+        idIsValid(id);
+        this.id=id;
+        this.name = name;
+        this.cost = cost;
+        this.birthDate = birthDate;
+    }
+
     public int getId() { return id; }
 
     public Name getName() {
