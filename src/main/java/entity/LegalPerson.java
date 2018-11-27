@@ -1,8 +1,8 @@
 package entity;
 
 
-import api.ICustomer;
 import api.ILegalPerson;
+import dict.PersonStatus;
 
 public class LegalPerson implements ILegalPerson {
 

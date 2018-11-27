@@ -1,7 +1,7 @@
 package api;
 
 
-import entity.PersonStatus;
+import dict.PersonStatus;
 
 public interface ICustomer extends IEntity {
 

@@ -1,9 +1,11 @@
 import api.*;
+import dict.PersonStatus;
 import org.junit.*;
 
 import entity.*;
 import utils.*;
 import org.junit.rules.ExpectedException;
+import validate.ValidateCustomer;
 
 import java.io.IOException;
 import java.time.LocalDate;
@@ -41,6 +43,10 @@ public class AppTest {
 
 	String path;
 
+	HashMap<String, String> validateMap;
+
+	ValidateCustomer validateCustomer;
+
 	@Before
 	public void initialize() {
 
@@ -50,7 +56,7 @@ public class AppTest {
 		date4 = LocalDate.of(2010, 12, 9);
 		date5 = LocalDate.of(2018, 12, 9);
 
-		indemnifiedPerson1 = factory.createIndemnifiedPerson( 1, "Ros", "Bob", "Endy", date1, 1000);
+		indemnifiedPerson1 = factory.createIndemnifiedPerson(1, "Ros", "Bob", "Endy", date1, 1000);
 		indemnifiedPerson2 = factory.createIndemnifiedPerson(2, "Ros", "Liz", "Bob", date2, 2000);
 		indemnifiedPerson3 = factory.createIndemnifiedPerson(3, "Ros", "Emi", "Endy", date3, 4000);
 		indemnifiedPerson4 = factory.createIndemnifiedPerson(2, "Ros", "Min", "Bob", date4, 0.1);
@@ -62,56 +68,64 @@ public class AppTest {
 		insuranceContract1 = factory.createInsuranceContract(1, date3, date4, date5, customer1, map1);
 
 		path = "./test.csv";
+
+		validateMap = new HashMap<>();
+
+		validateCustomer = new ValidateCustomer();
+
+
 	}
 
 	@Rule
 	public ExpectedException thrown = ExpectedException.none();
-	/*
-	  @Test
-	  public void invalidLegalPersonCreationTest() throws IllegalArgumentException {
 
-		  thrown.expect(IllegalArgumentException.class);
-		  thrown.expectMessage("Invalid arguments");
+/*	@Test
+	public void invalidLegalPersonCreationTest() throws IllegalArgumentException {
+		ICustomer legalPerson = factory.createCustomer(1, "", "");
 
-		  LegalPerson legalPerson = new LegalPerson(1,"", "");
-	  }
-
-	  @Test
-	  public void invalidPrivatePersonCreationTest() throws IllegalArgumentException {
-		  thrown.expect(IllegalArgumentException.class);
-		  thrown.expectMessage("Invalid address");
-
-		  PrivatePerson privatePerson = new PrivatePerson(2,"Bob", "Ros", "Endy", "");
-		  }
+		validateMap.putAll(validateCustomer.validate(legalPerson));
 
 
-	  @Test
-	  public void invalidDataIndemnifiedPersonCreationTest() throws IllegalArgumentException {
 
-		  thrown.expect(IllegalArgumentException.class);
-		  thrown.expectMessage("Invalid birth date");
+	}
 
-		  IndemnifiedPerson person = new IndemnifiedPerson(2, "Bob", "Ros", "Endy", 2000, date5);
-	  }
+	@Test
+	public void invalidPrivatePersonCreationTest() throws IllegalArgumentException {
+		thrown.expect(IllegalArgumentException.class);
+		thrown.expectMessage("Invalid address");
 
-	  @Test
-	  public void invalidCostIndemnifiedPersonCreationTest() throws IllegalArgumentException {
+		PrivatePerson privatePerson = new PrivatePerson(2, "Bob", "Ros", "Endy", "");
+	}
 
-		  thrown.expect(IllegalArgumentException.class);
-		  thrown.expectMessage("Invalid cost");
 
-		  IndemnifiedPerson person = new IndemnifiedPerson(2, "Bob", "Ros", "Endy", -1, date3);
-	  }
+	@Test
+	public void invalidDataIndemnifiedPersonCreationTest() throws IllegalArgumentException {
 
-	  @Test
-	  public void invalidIdIndemnifiedPersonCreationTest() throws IllegalArgumentException {
+		thrown.expect(IllegalArgumentException.class);
+		thrown.expectMessage("Invalid birth date");
 
-		  thrown.expect(IllegalArgumentException.class);
-		  thrown.expectMessage("Invalid id");
+		IndemnifiedPerson person = new IndemnifiedPerson(2, "Bob", "Ros", "Endy", 2000, date5);
+	}
 
-		  IndemnifiedPerson person = new IndemnifiedPerson(-1, "Bob", "Ros", "Endy", 2000, date3);
-	  }
+	@Test
+	public void invalidCostIndemnifiedPersonCreationTest() throws IllegalArgumentException {
+
+		thrown.expect(IllegalArgumentException.class);
+		thrown.expectMessage("Invalid cost");
+
+		IndemnifiedPerson person = new IndemnifiedPerson(2, "Bob", "Ros", "Endy", -1, date3);
+	}
+
+	@Test
+	public void invalidIdIndemnifiedPersonCreationTest() throws IllegalArgumentException {
+
+		thrown.expect(IllegalArgumentException.class);
+		thrown.expectMessage("Invalid id");
+
+		IndemnifiedPerson person = new IndemnifiedPerson(-1, "Bob", "Ros", "Endy", 2000, date3);
+	}
   */
+
 	@Test
 	public void insuranceContractSumTest() {
 

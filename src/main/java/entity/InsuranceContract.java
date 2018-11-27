@@ -116,39 +116,6 @@ public class InsuranceContract implements IInsuranceContract {
 		return sortList;
 	}
 
-/*	private void contractIdIsValid(int id) {
-		if (id <= 0){
-			throw new IllegalArgumentException("Invalid id");
-		}
-	}
-
-	private void contractDateIsValid(LocalDate contractDate
-			, LocalDate contractEffectiveDate
-			, LocalDate contractExpireDate) {
-		boolean condition1 = contractDate.isBefore(contractEffectiveDate)
-				|| contractDate.isEqual(contractEffectiveDate);
-		boolean condition2 = contractEffectiveDate.isBefore(contractExpireDate)
-				|| contractEffectiveDate.isEqual(contractExpireDate);
-		if (!((condition1) && (condition2))) {
-			throw new IllegalArgumentException("Invalid date");
-		}
-	}
-
-	private void customerIsValid(ICustomer ICustomer) {
-		if (ICustomer == null){
-			throw new NullPointerException();
-		}
-	}
-
-	private void indemnifiedPersonCollectionIsValid(HashMap<Integer, IndemnifiedPerson> indemnifiedPersonCollection, LocalDate contractDate) {
-		if (indemnifiedPersonCollection == null) {
-			throw new NullPointerException();
-		}
-		for (IndemnifiedPerson person : indemnifiedPersonCollection.values()) {
-			indemnifiedPersonDateIsValid(person);
-		}
-	}*/
-
 	private void indemnifiedPersonDateIsValid(IIndemnifiedPerson person) {
 		boolean cond1 = person.getBirthDate().isAfter(contractDate);
 		if (cond1) {

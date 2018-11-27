@@ -16,7 +16,7 @@ public class Factory implements IFactory {
 			, LocalDate contractEffectiveDate
 			, LocalDate contractExpireDate
 			, ICustomer ICustomer
-			, HashMap indemnifiedPersonCollection){
+			, HashMap indemnifiedPersonCollection) {
 
 		return new InsuranceContract(
 				contractId
@@ -25,14 +25,16 @@ public class Factory implements IFactory {
 				, contractExpireDate
 				, ICustomer
 				, indemnifiedPersonCollection);
-	};
+	}
+
+	;
 
 	public IInsuranceContract createInsuranceContract(
 			int contractId
 			, LocalDate contractDate
 			, LocalDate contractEffectiveDate
 			, LocalDate contractExpireDate
-			, ICustomer ICustomer){
+			, ICustomer ICustomer) {
 
 		return new InsuranceContract(
 				contractId
@@ -40,32 +42,38 @@ public class Factory implements IFactory {
 				, contractEffectiveDate
 				, contractExpireDate
 				, ICustomer);
-	};
+	}
+
+	;
 
 	public ICustomer createCustomer(
 			int id
 			, String organizationName
-			, String address){
+			, String address) {
 
 		return new LegalPerson(
 				id
 				, organizationName
 				, address);
-	};
+	}
+
+	;
 
 	public ICustomer createCustomer(
 			int id
 			, String lastName
 			, String firstName
 			, String middleName
-			, String address){
+			, String address) {
 		return new PrivatePerson(
 				id
 				, lastName
 				, firstName
 				, middleName
 				, address);
-	};
+	}
+
+	;
 
 	public IIndemnifiedPerson createIndemnifiedPerson(
 			int id
@@ -73,7 +81,7 @@ public class Factory implements IFactory {
 			, String firstName
 			, String middleName
 			, LocalDate birthDate
-			, double cost){
+			, double cost) {
 
 		return new IndemnifiedPerson(
 				id
@@ -82,5 +90,7 @@ public class Factory implements IFactory {
 				, middleName
 				, birthDate
 				, cost);
-	};
+	}
+
+	;
 }

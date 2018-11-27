@@ -1,7 +1,7 @@
 package entity;
 
-import api.ICustomer;
 import api.IPrivatePerson;
+import dict.PersonStatus;
 
 public class PrivatePerson implements IPrivatePerson {
 

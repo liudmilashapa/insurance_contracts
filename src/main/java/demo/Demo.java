@@ -6,6 +6,7 @@ import java.util.HashMap;
 
 import api.ILegalPerson;
 import api.IPrivatePerson;
+import dict.PersonStatus;
 import entity.*;
 
 
