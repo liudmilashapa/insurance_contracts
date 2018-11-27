@@ -1,41 +1,54 @@
 package entity;
 
 
-public class LegalPerson implements Customer {
+import api.ICustomer;
+import api.ILegalPerson;
 
-    private String organizationName;
-    private String address;
-    private PersonStatus status;
+public class LegalPerson implements ILegalPerson {
 
-    public LegalPerson(  String organizationName
-                       , String address) {
-        argumentsIsValid(organizationName, address);
-        this.organizationName=organizationName;
-        this.address=address;
-        this.status=PersonStatus.legalPerson;
-    }
+	private int id;
+	private String organizationName;
+	private String address;
+	private PersonStatus status;
 
-    public String getName()
-    {
-        return organizationName;
-    }
+	public LegalPerson(
+			int id
+			, String organizationName
+			, String address) {
+		this.id = id;
+		this.organizationName = organizationName;
+		this.address = address;
+		this.status = PersonStatus.legalPerson;
+	}
 
-    public String getAddress() {
-        return address;
-    }
+	public int getId() {
 
-    public PersonStatus getStatus() {
-        return status;
-    }
+		return id;
+	}
 
-    void argumentsIsValid(String organizationName
-                        , String address){
-        if (organizationName==""||address=="")
-            throw new IllegalArgumentException("Invalid arguments");
-    }
+	public String getOrganizationName() {
+
+		return organizationName;
+	}
+
+	public String getAddress() {
+
+		return address;
+	}
+
+	public PersonStatus getStatus() {
+
+		return status;
+	}
+
+/*	void argumentsIsValid(String organizationName
+			, String address) {
+		if (organizationName == "" || address == "")
+			throw new IllegalArgumentException("Invalid arguments");
+	}*/
 
 
-    }
+}
 
 
 

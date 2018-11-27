@@ -1,170 +1,187 @@
 package entity;
 
+import api.ICustomer;
+import api.IInsuranceContract;
+import api.IIndemnifiedPerson;
+
 import java.time.DateTimeException;
 import java.time.LocalDate;
 import java.util.*;
 
-public class InsuranceContract {
+public class InsuranceContract implements IInsuranceContract {
 
-    private int contractId;
-    private LocalDate contractDate;
-    private LocalDate contractEffectiveDate;
-    private LocalDate contractExpireDate;
-    private Customer customer;
-    private HashMap < Integer, IndemnifiedPerson > indemnifiedPersonCollection;
+	private int contractId;
+	private LocalDate contractDate;
+	private LocalDate contractEffectiveDate;
+	private LocalDate contractExpireDate;
+	private ICustomer ICustomer;
+	private HashMap<Integer, IIndemnifiedPerson> indemnifiedPersonCollection;
 
-    public InsuranceContract(  int contractId
-                             , LocalDate contractDate
-                             , LocalDate contractEffectiveDate
-                             , LocalDate contractExpireDate
-                             , Customer customer
-                             , HashMap indemnifiedPersonCollection){
-        contractIdIsValid(contractId);
-        contractDateIsValid(  contractDate
-                            , contractEffectiveDate
-                            , contractExpireDate);
+	public InsuranceContract(
+			int contractId
+			, LocalDate contractDate
+			, LocalDate contractEffectiveDate
+			, LocalDate contractExpireDate
+			, ICustomer ICustomer
+			, HashMap indemnifiedPersonCollection) {
 
-        this.contractId = contractId;
-        this.contractDate = contractDate;
-        this.contractEffectiveDate = contractEffectiveDate;
-        this.contractExpireDate = contractExpireDate;
+		this.contractId = contractId;
+		this.contractDate = contractDate;
+		this.contractEffectiveDate = contractEffectiveDate;
+		this.contractExpireDate = contractExpireDate;
+		this.ICustomer = ICustomer;
+		this.indemnifiedPersonCollection = indemnifiedPersonCollection;
+	}
 
-        customerIsValid(customer);
-        this.customer = customer;
-        indemnifiedPersonCollectionIsValid(indemnifiedPersonCollection, contractDate);
-        this.indemnifiedPersonCollection = indemnifiedPersonCollection;
-    }
+	public InsuranceContract(
+			int contractId
+			, LocalDate contractDate
+			, LocalDate contractEffectiveDate
+			, LocalDate contractExpireDate
+			, ICustomer ICustomer) {
 
-    public int getContractId() {
-        return contractId;
-    }
+		this.contractId = contractId;
+		this.contractDate = contractDate;
+		this.contractEffectiveDate = contractEffectiveDate;
+		this.contractExpireDate = contractExpireDate;
+		this.ICustomer = ICustomer;
+	}
 
-    public LocalDate getContractDate() {
-        return contractDate;
-    }
+	public int getId() {
 
-    public LocalDate getContractEffectiveDate() {
-        return contractEffectiveDate;
-    }
+		return contractId;
+	}
 
-    public LocalDate getContractExpireDate() {
-        return contractExpireDate;
-    }
+	public LocalDate getContractDate() {
 
-    public Customer getCustomer() {
-        return customer;
-    }
+		return contractDate;
+	}
 
-    public HashMap<Integer, IndemnifiedPerson> getIndemnifiedPersonCollection() {
-        return indemnifiedPersonCollection;
-    }
+	public LocalDate getContractEffectiveDate() {
 
-    public void addPerson(IndemnifiedPerson person) {
-        indemnifiedPersonDateIsValid(person);
-        indemnifiedPersonIdIsValid(person);
-        indemnifiedPersonCollection.put(person.getId(), person);
-    }
+		return contractEffectiveDate;
+	}
 
-    public IndemnifiedPerson findPerson(int id){
-        IndemnifiedPerson personValue = indemnifiedPersonCollection.get(id);
-        if (personValue !=null)
-                return personValue;
-        else return null;
-    }
+	public LocalDate getContractExpireDate() {
 
-    public void sortInsurancePersonByName(){
-        List<IndemnifiedPerson> sortList = new ArrayList<IndemnifiedPerson>(indemnifiedPersonCollection.values());
-        Comparator<IndemnifiedPerson> byName = new Comparator<IndemnifiedPerson>() {
-            @Override
-            public int compare(IndemnifiedPerson o1, IndemnifiedPerson o2) {
-                return o1.getName().compareTo(o2.getName());
-            }
-        };
-        Collections.sort(sortList, byName);
-        outputInsurancePerson(sortList);
-    }
+		return contractExpireDate;
+	}
 
-    public void sortInsurancePersonBirthDate(){
-        List<IndemnifiedPerson> sortList = new ArrayList<IndemnifiedPerson>(indemnifiedPersonCollection.values());
-        Comparator<IndemnifiedPerson> byBirth = new Comparator<IndemnifiedPerson>() {
-            @Override
-            public int compare(IndemnifiedPerson o1, IndemnifiedPerson o2) {
-                return o1.getBirthDate().compareTo(o2.getBirthDate());
-            }
-        };
-        Collections.sort(sortList, byBirth);
-        outputInsurancePerson(sortList);
-    }
+	public ICustomer getCustomer() {
 
-    private void outputInsurancePerson(List<IndemnifiedPerson> personList){
-        System.out.println("\t Indemnified people: ");
-        for (IndemnifiedPerson person:personList) {
-            person.outputPersonInformation();
-        }
-    }
+		return ICustomer;
+	}
 
+	public HashMap<Integer, IIndemnifiedPerson> getIndemnifiedPersonCollection() {
 
-    private void contractIdIsValid(int id){
-        if(id<=0)
-            throw new IllegalArgumentException ("Invalid id");
-    }
+		return indemnifiedPersonCollection;
+	}
 
-    private void contractDateIsValid( LocalDate contractDate
-                                    , LocalDate contractEffectiveDate
-                                    , LocalDate contractExpireDate){
-        boolean condition1 = contractDate.isBefore(contractEffectiveDate)
-                          || contractDate.isEqual(contractEffectiveDate);
-        boolean condition2 = contractEffectiveDate.isBefore(contractExpireDate)
-                          || contractEffectiveDate.isEqual(contractExpireDate);
-        if(!(( condition1 ) && ( condition2))) {
-            throw new IllegalArgumentException ("Invalid date");
-        }
-    }
+	public void addPerson(IIndemnifiedPerson person) {
+		indemnifiedPersonDateIsValid(person);
+		indemnifiedPersonIdIsValid(person);
+		indemnifiedPersonCollection.put(person.getId(), person);
+	}
 
-    private void customerIsValid( Customer customer ){
-        if (customer == null)
-            throw new NullPointerException ();
-        }
+	public IIndemnifiedPerson findPerson(int id) {
+		IIndemnifiedPerson personValue = indemnifiedPersonCollection.get(id);
+		if (personValue != null) {
+			return personValue;
+		} else {
+			return null;
+		}
+	}
 
-    private void indemnifiedPersonCollectionIsValid(HashMap<Integer, IndemnifiedPerson> indemnifiedPersonCollection, LocalDate contractDate){
-        if (indemnifiedPersonCollection == null){
-            throw new NullPointerException ();}
-        for (IndemnifiedPerson  person : indemnifiedPersonCollection.values() ){
-           indemnifiedPersonDateIsValid(person);
-            }
-     }
+	public List<IIndemnifiedPerson> sortInsurancePersonByName() {
+		List<IIndemnifiedPerson> sortList = new ArrayList<>(indemnifiedPersonCollection.values());
+		Comparator<IIndemnifiedPerson> byName = new Comparator<IIndemnifiedPerson>() {
+			@Override
+			public int compare(IIndemnifiedPerson o1, IIndemnifiedPerson o2) {
+				return o1.getFullName().compareTo(o2.getFullName());
+			}
+		};
+		Collections.sort(sortList, byName);
+		return sortList;
+	}
 
-    private void indemnifiedPersonDateIsValid(IndemnifiedPerson person) {
-        boolean cond1= person.getBirthDate().isAfter(contractDate);
-        if (cond1)
-            throw new DateTimeException("Date of birth should be succeed contract date");
-    }
+	public List<IIndemnifiedPerson> sortInsurancePersonBirthDate() {
+		List<IIndemnifiedPerson> sortList = new ArrayList<>(indemnifiedPersonCollection.values());
+		Comparator<IIndemnifiedPerson> byBirth = new Comparator<IIndemnifiedPerson>() {
+			@Override
+			public int compare(IIndemnifiedPerson o1, IIndemnifiedPerson o2) {
+				return o1.getBirthDate().compareTo(o2.getBirthDate());
+			}
+		};
+		Collections.sort(sortList, byBirth);
+		return sortList;
+	}
 
-    private void indemnifiedPersonIdIsValid(IndemnifiedPerson person) {
-        if(indemnifiedPersonCollection.containsKey(person.getId()))
-            throw new IllegalArgumentException("This person has been added");
-        }
+/*	private void contractIdIsValid(int id) {
+		if (id <= 0){
+			throw new IllegalArgumentException("Invalid id");
+		}
+	}
 
-    public double insuredSum(){
-        double sum = 0;
-        for (IndemnifiedPerson person : indemnifiedPersonCollection.values() ){
-            sum += person.getCost();
-        }
-        return  sum;
-    }
+	private void contractDateIsValid(LocalDate contractDate
+			, LocalDate contractEffectiveDate
+			, LocalDate contractExpireDate) {
+		boolean condition1 = contractDate.isBefore(contractEffectiveDate)
+				|| contractDate.isEqual(contractEffectiveDate);
+		boolean condition2 = contractEffectiveDate.isBefore(contractExpireDate)
+				|| contractEffectiveDate.isEqual(contractExpireDate);
+		if (!((condition1) && (condition2))) {
+			throw new IllegalArgumentException("Invalid date");
+		}
+	}
 
-    public double insuredSumByLambda(){
-        double[] sum = new double[1];
+	private void customerIsValid(ICustomer ICustomer) {
+		if (ICustomer == null){
+			throw new NullPointerException();
+		}
+	}
 
-        indemnifiedPersonCollection.forEach(
-                ( k, v) -> {
-                    sum[0] += v.getCost();
-                }
+	private void indemnifiedPersonCollectionIsValid(HashMap<Integer, IndemnifiedPerson> indemnifiedPersonCollection, LocalDate contractDate) {
+		if (indemnifiedPersonCollection == null) {
+			throw new NullPointerException();
+		}
+		for (IndemnifiedPerson person : indemnifiedPersonCollection.values()) {
+			indemnifiedPersonDateIsValid(person);
+		}
+	}*/
 
-        );
+	private void indemnifiedPersonDateIsValid(IIndemnifiedPerson person) {
+		boolean cond1 = person.getBirthDate().isAfter(contractDate);
+		if (cond1) {
+			throw new DateTimeException("Date of birth should be succeed contract date");
+		}
+	}
 
-        return  sum[0];
-    }
+	private void indemnifiedPersonIdIsValid(IIndemnifiedPerson person) {
+		if (indemnifiedPersonCollection.containsKey(person.getId())) {
+			throw new IllegalArgumentException("This person has been added");
+		}
+	}
+
+	public double insuredSum() {
+		double sum = 0;
+		for (IIndemnifiedPerson person : indemnifiedPersonCollection.values()) {
+			sum += person.getCost();
+		}
+		return sum;
+	}
+
+	public double insuredSumByLambda() {
+		double[] sum = new double[1];
+
+		indemnifiedPersonCollection.forEach(
+				(k, v) -> {
+					sum[0] += v.getCost();
+				}
+
+		);
+
+		return sum[0];
+	}
 }
 
 

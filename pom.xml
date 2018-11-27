@@ -15,10 +15,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.4</version>
-            <scope>provided</scope>
+            <groupId>org.sonarsource.sonarlint</groupId>
+            <artifactId>sonarlint-cli</artifactId>
+            <version>2.1.0.566</version>
         </dependency>
 
         <dependency>

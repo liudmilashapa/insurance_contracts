@@ -1,43 +1,66 @@
 package entity;
 
-public class PrivatePerson implements Customer {
+import api.ICustomer;
+import api.IPrivatePerson;
 
-    private Name name;
-    private String address;
-    private PersonStatus status;
+public class PrivatePerson implements IPrivatePerson {
 
-    public  PrivatePerson( String firstName
-                         , String lastName
-                         , String middleName
-                         , String address){
-        argumentsIsValid(address);
-        this.name = new Name (firstName, lastName, middleName);
-        this.address = address;
-        this.status = PersonStatus.privatePerson;
-    }
+	private int id;
+	private String lastName;
+	private String firstName;
+	private String middleName;
+	private String address;
+	private PersonStatus status;
 
-    public Name getNameAsObject()
-    {
-        return name;
-    }
+	public PrivatePerson(
+			int id
+			, String lastName
+			, String firstName
+			, String middleName
+			, String address) {
 
-    public String getName(){
-        return name.getFullName();
-    }
+		this.id = id;
+		this.lastName = lastName;
+		this.firstName = firstName;
+		this.middleName = middleName;
+		this.address = address;
+		this.status = PersonStatus.privatePerson;
+	}
 
-    public String getNameWithInitials(){
-        return name.getNameWithInitials();
-    }
+	@Override
+	public int getId()
+	{
+		return id;
+	}
 
-    public String getAddress() {
-        return address;
-    }
+	public String getLastName() {
 
-    public PersonStatus getStatus() { return status; }
+		return lastName;
+	}
 
-    void argumentsIsValid(String address){
-        if (address=="")
-            throw new IllegalArgumentException("Invalid address");
-    }
+	public String getFirstName() {
+
+		return firstName;
+	}
+
+	public String getMiddleName() {
+
+		return middleName;
+	}
+
+	public String getAddress() {
+
+		return address;
+	}
+
+	public PersonStatus getStatus() {
+
+		return status;
+	}
+
+/*	void argumentsIsValid(String address) {
+		if (address == "")
+			throw new IllegalArgumentException("Invalid address");
+	}*/
 
 }

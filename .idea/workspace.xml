@@ -12,6 +12,7 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/insuranecontracts$AppTest.ic" NAME="AppTest Coverage Results" MODIFIED="1542328014575" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/insuranecontracts$AppTest_writeAndReadTest.ic" NAME="AppTest.writeAndReadTest Coverage Results" MODIFIED="1543305397519" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="CoverageViewManager">
     <option name="myElementSize" value="108" />
@@ -58,111 +59,196 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="26387400">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.5" value="1" />
+          <entry key="project.open.time.72" value="1" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.opened" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="class" value="20" />
+          <entry key="java" value="81" />
+          <entry key="xml" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CLASS" value="20" />
+          <entry key="JAVA" value="81" />
+          <entry key="XML" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="dummy" value="14" />
+          <entry key="java" value="1480" />
+          <entry key="xml" value="20" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="1480" />
+          <entry key="PLAIN_TEXT" value="14" />
+          <entry key="XML" value="20" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/AppTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="24" lean-forward="true" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/entity/IndemnifiedPerson.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="327">
-              <caret line="62" selection-start-line="62" selection-end-line="62" />
-              <folding>
-                <element signature="method#outputPersonNameWithInitials#0;class#IndemnifiedPerson#0" />
-                <element signature="method#outputPersonInformation#0;class#IndemnifiedPerson#0" />
-                <element signature="method#birthDateIsValid#0;class#IndemnifiedPerson#0" />
-                <element signature="method#costIsValid#0;class#IndemnifiedPerson#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/entity/InsuranceContract.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="138" selection-start-line="138" selection-end-line="138" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#findPerson#0;class#InsuranceContract#0" />
-                <element signature="method#sortInsurancePersonByName#0;class#InsuranceContract#0" />
-                <element signature="method#sortInsurancePersonBirthDate#0;class#InsuranceContract#0" />
-                <element signature="method#outputInsurancePerson#0;class#InsuranceContract#0" />
-                <element signature="method#contractIdIsValid#0;class#InsuranceContract#0" />
-                <element signature="method#insuredSum#0;class#InsuranceContract#0" />
-                <element signature="method#insuredSumByLambda#0;class#InsuranceContract#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="17" selection-start-line="17" selection-end-line="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/rules/ExpectedException.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="100" selection-start-line="100" selection-end-line="100" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/runners/ParentRunner.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="226" column="16" selection-start-line="226" selection-start-column="16" selection-end-line="226" selection-end-column="16" />
-              <folding>
-                <element signature="e#2111#2112#0" expanded="true" />
-                <element signature="e#2155#2156#0" expanded="true" />
-                <element signature="e#5951#6086#0" expanded="true" />
-                <element signature="e#6085#6086#0" expanded="true" />
-                <element signature="e#6484#6648#0" expanded="true" />
-                <element signature="e#6647#6648#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/runner/JUnitCore.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="395">
-              <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/runners/BlockJUnit4ClassRunner.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="49" selection-start-line="49" selection-end-line="49" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/test/java/AppTest.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="127">
+                  <caret line="243" column="128" selection-start-line="243" selection-start-column="128" selection-end-line="243" selection-end-column="128" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/entity/IndemnifiedPerson.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="136">
+                  <caret line="10" column="29" lean-forward="true" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="method#getLastName#0;class#IndemnifiedPerson#0" />
+                    <element signature="method#getFirstName#0;class#IndemnifiedPerson#0" />
+                    <element signature="method#getMiddleName#0;class#IndemnifiedPerson#0" />
+                    <element signature="method#getBirthDate#0;class#IndemnifiedPerson#0" />
+                    <element signature="method#getCost#0;class#IndemnifiedPerson#0" />
+                    <element signature="method#getFullName#0;class#IndemnifiedPerson#0" />
+                    <element signature="method#getNameWithInitials#0;class#IndemnifiedPerson#0" />
+                    <element signature="method#setCost#0;class#IndemnifiedPerson#0" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/utils/InsuranceWriter.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-338">
+                  <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/main/java/validate/IValidate.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="170">
+                  <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$USER_HOME$/Downloads/IValidate.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="34">
+                  <caret line="2" selection-start-line="2" selection-end-line="8" selection-end-column="1" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/validate/Validate.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="51">
+                  <caret line="3" selection-start-line="3" selection-end-line="3" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/api/IFactory.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="700">
+                  <caret line="42" column="1" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="1" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/entity/Factory.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="445">
+                  <caret line="60" column="30" lean-forward="true" selection-start-line="60" selection-start-column="30" selection-end-line="60" selection-end-column="30" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/api/IInsuranceContract.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="119">
+                  <caret line="7" column="35" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="35" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/api/ILegalPerson.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="68">
+                  <caret line="4" column="40" selection-start-line="4" selection-start-column="40" selection-end-line="4" selection-end-column="40" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/main/java/entity/IndemnifiedPerson.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="68">
+                  <caret line="6" column="30" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="30" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="method#getLastName#0;class#IndemnifiedPerson#0" />
+                    <element signature="method#getFirstName#0;class#IndemnifiedPerson#0" />
+                    <element signature="method#getMiddleName#0;class#IndemnifiedPerson#0" />
+                    <element signature="method#getBirthDate#0;class#IndemnifiedPerson#0" />
+                    <element signature="method#getCost#0;class#IndemnifiedPerson#0" />
+                    <element signature="method#getFullName#0;class#IndemnifiedPerson#0" />
+                    <element signature="method#getNameWithInitials#0;class#IndemnifiedPerson#0" />
+                    <element signature="method#setCost#0;class#IndemnifiedPerson#0" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -186,26 +272,48 @@
       <find>map1.p</find>
       <find>Ef</find>
       <find>insuranceContract1</find>
+      <find>nameInfo</find>
+      <find>Name</find>
+      <find>getBirthDate</find>
+      <find>Sy</find>
+      <find>System</find>
     </findStrings>
     <replaceStrings>
       <replace>HashMap</replace>
       <replace>middle</replace>
     </replaceStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/entity/PersonStatus.java" />
         <option value="$PROJECT_DIR$/src/test/java/demo/Demo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/entity/PersonStatus.java" />
         <option value="$PROJECT_DIR$/src/main/java/entity/Customer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/entity/Name.java" />
+        <option value="$PROJECT_DIR$/src/main/java/api/IEntity.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/demo/Demo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/api/IPerson.java" />
+        <option value="$PROJECT_DIR$/src/main/java/api/IInsurenceContract.java" />
+        <option value="$PROJECT_DIR$/src/main/java/api/IIndemnifiedPerson.java" />
+        <option value="$PROJECT_DIR$/src/main/java/api/IPrivatePerson.java" />
+        <option value="$PROJECT_DIR$/src/main/java/api/ILegalPerson.java" />
         <option value="$PROJECT_DIR$/src/main/java/entity/LegalPerson.java" />
         <option value="$PROJECT_DIR$/src/main/java/entity/PrivatePerson.java" />
-        <option value="$PROJECT_DIR$/src/main/java/entity/Name.java" />
         <option value="$PROJECT_DIR$/src/main/java/entity/IndemnifiedPerson.java" />
+        <option value="$PROJECT_DIR$/src/main/java/entity/Factory.java" />
+        <option value="$PROJECT_DIR$/src/main/java/api/IFactory.java" />
+        <option value="$PROJECT_DIR$/src/main/java/api/ICustomer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/api/IInsuranceContract.java" />
         <option value="$PROJECT_DIR$/src/main/java/entity/InsuranceContract.java" />
+        <option value="$PROJECT_DIR$/src/main/java/utils/InsuranceReader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/demo/Demo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/utils/InsuranceWriter.java" />
         <option value="$PROJECT_DIR$/src/test/java/AppTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/validate/Validate.java" />
+        <option value="$PROJECT_DIR$/src/main/java/validate/IValidate.java" />
       </list>
     </option>
   </component>
@@ -238,45 +346,47 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-1088" />
-    <option name="width" value="1936" />
-    <option name="height" value="1096" />
+    <option name="x" value="311" />
+    <option name="y" value="-846" />
+    <option name="width" value="1026" />
+    <option name="height" value="546" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="insuranecontracts" type="b2602c69:ProjectViewProjectNode" />
-              <item name="InsuranceContracts" type="462c0819:PsiDirectoryNode" />
+              <item name="insuranceContracts" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="insuranecontracts" type="b2602c69:ProjectViewProjectNode" />
-              <item name="InsuranceContracts" type="462c0819:PsiDirectoryNode" />
+              <item name="insuranceContracts" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="insuranecontracts" type="b2602c69:ProjectViewProjectNode" />
-              <item name="InsuranceContracts" type="462c0819:PsiDirectoryNode" />
+              <item name="insuranceContracts" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="insuranecontracts" type="b2602c69:ProjectViewProjectNode" />
-              <item name="InsuranceContracts" type="462c0819:PsiDirectoryNode" />
+              <item name="insuranceContracts" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="insuranecontracts" type="b2602c69:ProjectViewProjectNode" />
-              <item name="InsuranceContracts" type="462c0819:PsiDirectoryNode" />
+              <item name="insuranceContracts" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -284,38 +394,47 @@
             </path>
             <path>
               <item name="insuranecontracts" type="b2602c69:ProjectViewProjectNode" />
-              <item name="InsuranceContracts" type="462c0819:PsiDirectoryNode" />
+              <item name="insuranceContracts" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="insuranecontracts" type="b2602c69:ProjectViewProjectNode" />
+              <item name="insuranceContracts" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="validate" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="insuranecontracts" type="b2602c69:ProjectViewProjectNode" />
+              <item name="insuranceContracts" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="insuranecontracts" type="b2602c69:ProjectViewProjectNode" />
-              <item name="InsuranceContracts" type="462c0819:PsiDirectoryNode" />
+              <item name="insuranceContracts" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="insuranecontracts" type="b2602c69:ProjectViewProjectNode" />
-              <item name="InsuranceContracts" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://D:/Projects/InsuranceContracts/src/main/java/entity/PersonStatus.java" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542329725174" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543316463207" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -329,7 +448,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.AppTest.invalidBirthDateContractDateTest">
+  <component name="RunManager" selected="JUnit.AppTest.writeAndReadTest">
     <configuration name="App" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="demo.Demo" />
       <module name="InsuranceContracts" />
@@ -352,6 +471,26 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="AppTest" />
       <option name="METHOD_NAME" value="invalidBirthDateContractDateTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AppTest.invalidContractExpireDateTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="insurane-contracts" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="AppTest" />
+      <option name="METHOD_NAME" value="invalidContractExpireDateTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AppTest.writeAndReadTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="insurane-contracts" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="AppTest" />
+      <option name="METHOD_NAME" value="writeAndReadTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -387,9 +526,13 @@
       <item itemvalue="Maven.Unnamed" />
       <item itemvalue="JUnit.AppTest" />
       <item itemvalue="JUnit.AppTest.invalidBirthDateContractDateTest" />
+      <item itemvalue="JUnit.AppTest.writeAndReadTest" />
+      <item itemvalue="JUnit.AppTest.invalidContractExpireDateTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AppTest.writeAndReadTest" />
+        <item itemvalue="JUnit.AppTest.invalidContractExpireDateTest" />
         <item itemvalue="JUnit.AppTest.invalidBirthDateContractDateTest" />
         <item itemvalue="JUnit.AppTest" />
       </list>
@@ -409,35 +552,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="AppTest - 2018.11.13 at 02h 33m 32s.xml">
-      <configuration name="AppTest" configurationId="JUnit" />
+    <history-entry file="AppTest_writeAndReadTest - 2018.11.25 at 20h 38m 26s.xml">
+      <configuration name="AppTest.writeAndReadTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AppTest - 2018.11.16 at 01h 16m 43s.xml">
-      <configuration name="AppTest" configurationId="JUnit" />
+    <history-entry file="AppTest_writeAndReadTest - 2018.11.25 at 20h 38m 44s.xml">
+      <configuration name="AppTest.writeAndReadTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AppTest - 2018.11.16 at 02h 13m 19s.xml">
-      <configuration name="AppTest" configurationId="JUnit" />
+    <history-entry file="AppTest_invalidContractExpireDateTest - 2018.11.25 at 20h 41m 54s.xml">
+      <configuration name="AppTest.invalidContractExpireDateTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AppTest - 2018.11.16 at 02h 25m 45s.xml">
-      <configuration name="AppTest" configurationId="JUnit" />
+    <history-entry file="AppTest_invalidContractExpireDateTest - 2018.11.25 at 20h 43m 41s.xml">
+      <configuration name="AppTest.invalidContractExpireDateTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AppTest - 2018.11.16 at 02h 26m 58s.xml">
-      <configuration name="AppTest" configurationId="JUnit" />
+    <history-entry file="AppTest_writeAndReadTest - 2018.11.25 at 20h 46m 41s.xml">
+      <configuration name="AppTest.writeAndReadTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AppTest - 2018.11.16 at 02h 27m 54s.xml">
-      <configuration name="AppTest" configurationId="JUnit" />
+    <history-entry file="AppTest_writeAndReadTest - 2018.11.25 at 20h 51m 08s.xml">
+      <configuration name="AppTest.writeAndReadTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AppTest - 2018.11.16 at 02h 28m 19s.xml">
-      <configuration name="AppTest" configurationId="JUnit" />
+    <history-entry file="AppTest_writeAndReadTest - 2018.11.25 at 20h 51m 30s.xml">
+      <configuration name="AppTest.writeAndReadTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AppTest_invalidBirthDateContractDateTest - 2018.11.16 at 02h 38m 26s.xml">
-      <configuration name="AppTest.invalidBirthDateContractDateTest" configurationId="JUnit" />
+    <history-entry file="AppTest_writeAndReadTest - 2018.11.25 at 21h 14m 34s.xml">
+      <configuration name="AppTest.writeAndReadTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AppTest_invalidBirthDateContractDateTest - 2018.11.16 at 02h 41m 07s.xml">
-      <configuration name="AppTest.invalidBirthDateContractDateTest" configurationId="JUnit" />
+    <history-entry file="AppTest_writeAndReadTest - 2018.11.27 at 09h 56m 36s.xml">
+      <configuration name="AppTest.writeAndReadTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AppTest_invalidBirthDateContractDateTest - 2018.11.16 at 02h 43m 17s.xml">
-      <configuration name="AppTest.invalidBirthDateContractDateTest" configurationId="JUnit" />
+    <history-entry file="AppTest_writeAndReadTest - 2018.11.27 at 09h 56m 40s.xml">
+      <configuration name="AppTest.writeAndReadTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -451,47 +594,64 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-1088" width="1936" height="1096" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4992272" visible="true" weight="0.17697228" />
-      <window_info id="Structure" order="1" sideWeight="0.5007728" side_tool="true" visible="true" weight="0.17697228" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.83248085" visible="true" weight="0.23347548" />
+      <window_info id="Structure" order="1" sideWeight="0.16751918" side_tool="true" visible="true" weight="0.23347548" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3281412" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32917964" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.1879543" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39875388" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3289689" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.3289689" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.31587562" />
-      <window_info anchor="right" id="Coverage" sideWeight="0.5007728" side_tool="true" visible="true" weight="0.17643923" />
       <window_info anchor="right" id="Palette" order="0" />
       <window_info anchor="right" id="Theme Preview" order="1" />
       <window_info anchor="right" id="Capture Analysis" order="2" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="4" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Maven Projects" order="5" sideWeight="0.4992272" visible="true" weight="0.17643923" />
+      <window_info anchor="right" id="Maven Projects" order="5" sideWeight="0.49744245" visible="true" weight="0.0069296374" />
       <window_info anchor="right" id="Ant Build" order="6" weight="0.2496112" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="7" weight="0.25" />
+      <window_info anchor="right" id="Coverage" order="8" sideWeight="0.5025575" side_tool="true" visible="true" weight="0.0069296374" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/utils/InsuranceReader.java</url>
+          <line>29</line>
+          <properties />
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/entity/LegalPerson.java</url>
+          <line>23</line>
+          <properties class="entity.LegalPerson" method="getId">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/entity/Customer.class" />
-    <entry file="file://$PROJECT_DIR$/entity/IndemnifiedPerson.class" />
     <entry file="file://$PROJECT_DIR$/entity/PersonStatus.class" />
     <entry file="file://$PROJECT_DIR$/entity/Name.class" />
     <entry file="file://$PROJECT_DIR$/entity/InsuranceContract.class" />
@@ -509,45 +669,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="26" column="35" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/entity/IndemnifiedPerson.java___jb_tmp___" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/entity/Customer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/internal/requests/FilterRequest.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/demo/Demo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="43" column="86" selection-start-line="43" selection-start-column="86" selection-end-line="43" selection-end-column="86" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/entity/PersonStatus.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="27" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk-11/lib/src.zip!/java.base/jdk/internal/reflect/NativeMethodAccessorImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
@@ -569,27 +691,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/entity/Name.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        <state relative-caret-position="408">
+          <caret line="24" column="42" lean-forward="true" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/entity/LegalPerson.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="33" column="66" lean-forward="true" selection-start-line="33" selection-start-column="66" selection-end-line="33" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/entity/PrivatePerson.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="34" column="63" selection-start-line="34" selection-start-column="56" selection-end-line="34" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/entity/Name.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/internal/runners/statements/InvokeMethod.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -597,41 +706,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/runners/model/FrameworkMethod.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
-          <folding>
-            <element signature="e#870#1063#0" expanded="true" />
-            <element signature="e#1062#1063#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/internal/runners/statements/RunBefores.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/entity/IndemnifiedPerson.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="62" selection-start-line="62" selection-end-line="62" />
-          <folding>
-            <element signature="method#outputPersonNameWithInitials#0;class#IndemnifiedPerson#0" />
-            <element signature="method#outputPersonInformation#0;class#IndemnifiedPerson#0" />
-            <element signature="method#birthDateIsValid#0;class#IndemnifiedPerson#0" />
-            <element signature="method#costIsValid#0;class#IndemnifiedPerson#0" />
-          </folding>
+        <state relative-caret-position="351">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
         </state>
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/rules/RunRules.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        <state relative-caret-position="198">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/runners/model/FrameworkMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/internal/requests/FilterRequest.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
         </state>
       </provider>
     </entry>
@@ -642,13 +741,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/rules/ExpectedException.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="100" selection-start-line="100" selection-end-line="100" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/runners/BlockJUnit4ClassRunner.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -656,49 +748,239 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/runner/JUnitCore.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="397">
+          <caret line="76" selection-start-line="76" selection-end-line="76" />
+        </state>
+      </provider>
+    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/runners/ParentRunner.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="226" column="16" selection-start-line="226" selection-start-column="16" selection-end-line="226" selection-end-column="16" />
+        <state relative-caret-position="438">
+          <caret line="240" selection-start-line="240" selection-end-line="240" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/rules/ExpectedException.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="100" selection-start-line="100" selection-end-line="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-csv/1.5/commons-csv-1.5.jar!/org/apache/commons/csv/CSVParser.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="74" selection-start-line="74" selection-end-line="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-11/lib/src.zip!/java.base/java/lang/NumberFormatException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="64" selection-start-line="64" selection-end-line="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-11/lib/src.zip!/java.base/java/lang/Integer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="982" selection-start-line="982" selection-end-line="982" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-11/lib/src.zip!/java.base/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="124" column="19" selection-start-line="124" selection-start-column="19" selection-end-line="124" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/api/IEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/api/IPrivatePerson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/entity/LegalPerson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="16" column="29" lean-forward="true" selection-start-line="14" selection-start-column="12" selection-end-line="16" selection-end-column="29" />
           <folding>
-            <element signature="e#2111#2112#0" expanded="true" />
-            <element signature="e#2155#2156#0" expanded="true" />
-            <element signature="e#5951#6086#0" expanded="true" />
-            <element signature="e#6085#6086#0" expanded="true" />
-            <element signature="e#6484#6648#0" expanded="true" />
-            <element signature="e#6647#6648#0" expanded="true" />
+            <element signature="method#LegalPerson#0;class#LegalPerson#0" />
+            <element signature="method#getId#0;class#LegalPerson#0" />
+            <element signature="method#getOrganizationName#0;class#LegalPerson#0" />
+            <element signature="method#getAddress#0;class#LegalPerson#0" />
+            <element signature="method#getStatus#0;class#LegalPerson#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/runner/JUnitCore.class">
+    <entry file="file://$PROJECT_DIR$/src/main/java/entity/PersonStatus.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
+        <state relative-caret-position="34">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/entity/PrivatePerson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="19" column="30" selection-start-line="15" selection-start-column="12" selection-end-line="19" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/api/IIndemnifiedPerson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" selection-start-line="4" selection-end-line="4" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/api/ICustomer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/utils/InsuranceReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1955">
+          <caret line="131" column="10" selection-start-line="131" selection-start-column="10" selection-end-line="131" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/demo/Demo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="45" column="95" selection-start-line="45" selection-start-column="95" selection-end-line="45" selection-end-column="95" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/entity/InsuranceContract.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="138" selection-start-line="138" selection-end-line="138" />
+        <state relative-caret-position="2159">
+          <caret line="171" selection-start-line="171" selection-end-line="171" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#InsuranceContract#0;class#InsuranceContract#0" />
+            <element signature="method#InsuranceContract#1;class#InsuranceContract#0" />
+            <element signature="method#getId#0;class#InsuranceContract#0" />
+            <element signature="method#getContractDate#0;class#InsuranceContract#0" />
+            <element signature="method#getContractEffectiveDate#0;class#InsuranceContract#0" />
+            <element signature="method#getContractExpireDate#0;class#InsuranceContract#0" />
+            <element signature="method#getCustomer#0;class#InsuranceContract#0" />
+            <element signature="method#getIndemnifiedPersonCollection#0;class#InsuranceContract#0" />
             <element signature="method#findPerson#0;class#InsuranceContract#0" />
-            <element signature="method#sortInsurancePersonByName#0;class#InsuranceContract#0" />
-            <element signature="method#sortInsurancePersonBirthDate#0;class#InsuranceContract#0" />
-            <element signature="method#outputInsurancePerson#0;class#InsuranceContract#0" />
-            <element signature="method#contractIdIsValid#0;class#InsuranceContract#0" />
-            <element signature="method#insuredSum#0;class#InsuranceContract#0" />
+            <element signature="method#indemnifiedPersonIdIsValid#0;class#InsuranceContract#0" />
             <element signature="method#insuredSumByLambda#0;class#InsuranceContract#0" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/api/ILegalPerson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="40" selection-start-line="4" selection-start-column="40" selection-end-line="4" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/utils/InsuranceWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-338">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/AppTest.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="243" column="128" selection-start-line="243" selection-start-column="128" selection-end-line="243" selection-end-column="128" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/IValidate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="8" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/api/IFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="700">
+          <caret line="42" column="1" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/api/IInsuranceContract.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="35" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/validate/Validate.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
-          <caret line="3" column="24" lean-forward="true" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/entity/IndemnifiedPerson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="10" column="29" lean-forward="true" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#getLastName#0;class#IndemnifiedPerson#0" />
+            <element signature="method#getFirstName#0;class#IndemnifiedPerson#0" />
+            <element signature="method#getMiddleName#0;class#IndemnifiedPerson#0" />
+            <element signature="method#getBirthDate#0;class#IndemnifiedPerson#0" />
+            <element signature="method#getCost#0;class#IndemnifiedPerson#0" />
+            <element signature="method#getFullName#0;class#IndemnifiedPerson#0" />
+            <element signature="method#getNameWithInitials#0;class#IndemnifiedPerson#0" />
+            <element signature="method#setCost#0;class#IndemnifiedPerson#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/entity/Factory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="445">
+          <caret line="60" column="30" lean-forward="true" selection-start-line="60" selection-start-column="30" selection-end-line="60" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/validate/IValidate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
@@ -754,7 +1036,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>InsuranceContracts</last-edited>
+          <last-edited>insurane-contracts</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -767,7 +1049,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>Maven: org.projectlombok:lombok:1.18.4</last-edited>
+          <last-edited>Maven: junit:junit:4.12</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

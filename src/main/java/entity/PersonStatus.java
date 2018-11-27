@@ -1,3 +1,3 @@
 package entity;
 
-public enum PersonStatus { privatePerson, legalPerson }
+public enum PersonStatus {privatePerson, legalPerson}
