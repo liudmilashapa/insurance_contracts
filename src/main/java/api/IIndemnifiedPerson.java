@@ -16,7 +16,17 @@ public interface IIndemnifiedPerson extends IEntity {
 
 	public String getFullName();
 
-	public String getNameWithInitials();
+	public void setId(long id);
+
+	public void setLastName(String lastName);
+
+	public void setFirstName(String firstName);
+
+	public void setMiddleName(String middleName);
+
+	public void setBirthDate(LocalDate birthDate);
 
 	public void setCost(double cost);
+
 }
+

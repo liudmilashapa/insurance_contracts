@@ -1,7 +1,5 @@
 package api;
 
-import entity.IndemnifiedPerson;
-
 import java.time.LocalDate;
 import java.util.*;
 
@@ -15,11 +13,11 @@ public interface IInsuranceContract extends IEntity {
 
 	public ICustomer getCustomer();
 
-	public HashMap<Integer, IIndemnifiedPerson> getIndemnifiedPersonCollection();
+	public HashMap<Long, IIndemnifiedPerson> getIndemnifiedPersonCollection();
 
 	public void addPerson(IIndemnifiedPerson person);
 
-	public IIndemnifiedPerson findPerson(int id);
+	public IIndemnifiedPerson findPerson(long id);
 
 	public List<IIndemnifiedPerson> sortInsurancePersonByName();
 

@@ -1,4 +1,4 @@
-package entity;
+package service;
 
 import api.ICustomer;
 import api.IInsuranceContract;
@@ -10,44 +10,45 @@ import java.util.*;
 
 public class InsuranceContract implements IInsuranceContract {
 
-	private int contractId;
+	private long contractId;
 	private LocalDate contractDate;
 	private LocalDate contractEffectiveDate;
 	private LocalDate contractExpireDate;
 	private ICustomer ICustomer;
-	private HashMap<Integer, IIndemnifiedPerson> indemnifiedPersonCollection;
+	private HashMap<Long, IIndemnifiedPerson> indemnifiedPersonCollection;
 
 	public InsuranceContract(
-			int contractId
+			long contractId
 			, LocalDate contractDate
 			, LocalDate contractEffectiveDate
 			, LocalDate contractExpireDate
-			, ICustomer ICustomer
+			, ICustomer customer
 			, HashMap indemnifiedPersonCollection) {
 
 		this.contractId = contractId;
 		this.contractDate = contractDate;
 		this.contractEffectiveDate = contractEffectiveDate;
 		this.contractExpireDate = contractExpireDate;
-		this.ICustomer = ICustomer;
+		this.ICustomer = customer;
 		this.indemnifiedPersonCollection = indemnifiedPersonCollection;
 	}
 
 	public InsuranceContract(
-			int contractId
+			long contractId
 			, LocalDate contractDate
 			, LocalDate contractEffectiveDate
 			, LocalDate contractExpireDate
-			, ICustomer ICustomer) {
+			, ICustomer customer) {
 
 		this.contractId = contractId;
 		this.contractDate = contractDate;
 		this.contractEffectiveDate = contractEffectiveDate;
 		this.contractExpireDate = contractExpireDate;
-		this.ICustomer = ICustomer;
+		this.ICustomer = customer;
+		this.indemnifiedPersonCollection = new HashMap<>();
 	}
 
-	public int getId() {
+	public long getId() {
 
 		return contractId;
 	}
@@ -72,7 +73,7 @@ public class InsuranceContract implements IInsuranceContract {
 		return ICustomer;
 	}
 
-	public HashMap<Integer, IIndemnifiedPerson> getIndemnifiedPersonCollection() {
+	public HashMap<Long, IIndemnifiedPerson> getIndemnifiedPersonCollection() {
 
 		return indemnifiedPersonCollection;
 	}
@@ -83,7 +84,7 @@ public class InsuranceContract implements IInsuranceContract {
 		indemnifiedPersonCollection.put(person.getId(), person);
 	}
 
-	public IIndemnifiedPerson findPerson(int id) {
+	public IIndemnifiedPerson findPerson(long id) {
 		IIndemnifiedPerson personValue = indemnifiedPersonCollection.get(id);
 		if (personValue != null) {
 			return personValue;

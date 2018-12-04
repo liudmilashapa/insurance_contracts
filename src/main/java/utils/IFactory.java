@@ -1,4 +1,8 @@
-package api;
+package utils;
+
+import api.ICustomer;
+import api.IIndemnifiedPerson;
+import api.IInsuranceContract;
 
 import java.time.LocalDate;
 import java.util.HashMap;
@@ -6,7 +10,7 @@ import java.util.HashMap;
 public interface IFactory {
 
 	public IInsuranceContract createInsuranceContract(
-			int contractId
+			long contractId
 			, LocalDate contractDate
 			, LocalDate contractEffectiveDate
 			, LocalDate contractExpireDate
@@ -14,26 +18,26 @@ public interface IFactory {
 			, HashMap indemnifiedPersonCollection);
 
 	public IInsuranceContract createInsuranceContract(
-			int contractId
+			long contractId
 			, LocalDate contractDate
 			, LocalDate contractEffectiveDate
 			, LocalDate contractExpireDate
 			, ICustomer ICustomer);
 
 	public ICustomer createCustomer(
-			int id
+			long id
 			, String organizationName
 			, String address);
 
 	public ICustomer createCustomer(
-			int id
+			long id
 			, String lastName
 			, String firstName
 			, String middleName
 			, String address);
 
 	public IIndemnifiedPerson createIndemnifiedPerson(
-			int id
+			long id
 			, String lastName
 			, String firstName
 			, String middleName

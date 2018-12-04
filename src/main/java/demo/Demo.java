@@ -6,8 +6,10 @@ import java.util.HashMap;
 
 import api.ILegalPerson;
 import api.IPrivatePerson;
+import data.IndemnifiedPerson;
+import data.PrivatePerson;
 import dict.PersonStatus;
-import entity.*;
+import service.InsuranceContract;
 
 
 public class Demo {
@@ -41,7 +43,7 @@ public class Demo {
 		LocalDate date3 = LocalDate.of(2010, 10, 10);
 		LocalDate date4 = LocalDate.of(2019, 10, 10);
 
-		HashMap<Integer, IndemnifiedPerson> myMap = new HashMap();
+		HashMap<Long, IndemnifiedPerson> myMap = new HashMap();
 		PrivatePerson customer = new PrivatePerson(1, "Anna", "Bor", "Henry", "London");
 		IndemnifiedPerson person1 = new IndemnifiedPerson(1, "Bob", "Black", "Ron", date1, 1999);
 		IndemnifiedPerson person2 = new IndemnifiedPerson(2, "Pop", "Black", "Ron", date1, 7999);

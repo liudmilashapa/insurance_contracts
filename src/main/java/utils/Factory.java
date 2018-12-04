@@ -1,9 +1,12 @@
-package entity;
+package utils;
 
 import api.ICustomer;
-import api.IFactory;
+import data.IndemnifiedPerson;
+import data.LegalPerson;
+import data.PrivatePerson;
 import api.IIndemnifiedPerson;
 import api.IInsuranceContract;
+import service.InsuranceContract;
 
 import java.time.LocalDate;
 import java.util.HashMap;
@@ -11,7 +14,7 @@ import java.util.HashMap;
 public class Factory implements IFactory {
 
 	public IInsuranceContract createInsuranceContract(
-			int contractId
+			long contractId
 			, LocalDate contractDate
 			, LocalDate contractEffectiveDate
 			, LocalDate contractExpireDate
@@ -30,7 +33,7 @@ public class Factory implements IFactory {
 	;
 
 	public IInsuranceContract createInsuranceContract(
-			int contractId
+			long contractId
 			, LocalDate contractDate
 			, LocalDate contractEffectiveDate
 			, LocalDate contractExpireDate
@@ -47,7 +50,7 @@ public class Factory implements IFactory {
 	;
 
 	public ICustomer createCustomer(
-			int id
+			long id
 			, String organizationName
 			, String address) {
 
@@ -60,11 +63,12 @@ public class Factory implements IFactory {
 	;
 
 	public ICustomer createCustomer(
-			int id
+			long id
 			, String lastName
 			, String firstName
 			, String middleName
 			, String address) {
+
 		return new PrivatePerson(
 				id
 				, lastName
@@ -76,7 +80,7 @@ public class Factory implements IFactory {
 	;
 
 	public IIndemnifiedPerson createIndemnifiedPerson(
-			int id
+			long id
 			, String lastName
 			, String firstName
 			, String middleName

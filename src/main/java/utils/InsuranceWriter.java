@@ -24,7 +24,7 @@ public class InsuranceWriter {
 		try {
 			CSVPrinter printer = new CSVPrinter(writer, CSVFormat.DEFAULT);
 			ArrayList<String> record = new ArrayList<>();
-			record.add(Integer.toString(contract.getId()));
+			record.add(Long.toString(contract.getId()));
 			record.add(contract.getContractDate().toString());
 			record.add(contract.getContractEffectiveDate().toString());
 			record.add(contract.getContractExpireDate().toString());
@@ -41,7 +41,7 @@ public class InsuranceWriter {
 	}
 
 	private void addCustomerToRecord(ICustomer customer, ArrayList<String> record) {
-		record.add(Integer.toString(customer.getId()));
+		record.add(Long.toString(customer.getId()));
 		record.add(customer.getStatus().toString());
 
 		if (customer.getStatus().equals(PersonStatus.privatePerson)) {
@@ -58,7 +58,7 @@ public class InsuranceWriter {
 	}
 
 	private void addIndemnifiedPersonToRecord(IIndemnifiedPerson person, ArrayList<String> record) {
-		record.add(Integer.toString(person.getId()));
+		record.add(Long.toString(person.getId()));
 		record.add(person.getLastName());
 		record.add(person.getFirstName());
 		record.add(person.getMiddleName());

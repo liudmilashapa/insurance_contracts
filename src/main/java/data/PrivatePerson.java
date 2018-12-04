@@ -1,11 +1,11 @@
-package entity;
+package data;
 
 import api.IPrivatePerson;
 import dict.PersonStatus;
 
 public class PrivatePerson implements IPrivatePerson {
 
-	private int id;
+	private long id;
 	private String lastName;
 	private String firstName;
 	private String middleName;
@@ -13,7 +13,7 @@ public class PrivatePerson implements IPrivatePerson {
 	private PersonStatus status;
 
 	public PrivatePerson(
-			int id
+			long id
 			, String lastName
 			, String firstName
 			, String middleName
@@ -27,8 +27,7 @@ public class PrivatePerson implements IPrivatePerson {
 		this.status = PersonStatus.privatePerson;
 	}
 
-	@Override
-	public int getId()
+	public long getId()
 	{
 		return id;
 	}
@@ -58,9 +57,25 @@ public class PrivatePerson implements IPrivatePerson {
 		return status;
 	}
 
-/*	void argumentsIsValid(String address) {
-		if (address == "")
-			throw new IllegalArgumentException("Invalid address");
-	}*/
+	@Override
+	public void setId(long id) {
+		this.id = id;
+	}
 
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public void setMiddleName(String middleName) {
+		this.middleName = middleName;
+	}
+
+	@Override
+	public void setAddress(String address) {
+		this.address = address;
+	}
 }

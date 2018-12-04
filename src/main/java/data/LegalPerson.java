@@ -1,4 +1,4 @@
-package entity;
+package data;
 
 
 import api.ILegalPerson;
@@ -6,13 +6,13 @@ import dict.PersonStatus;
 
 public class LegalPerson implements ILegalPerson {
 
-	private int id;
+	private long id;
 	private String organizationName;
 	private String address;
 	private PersonStatus status;
 
 	public LegalPerson(
-			int id
+			long id
 			, String organizationName
 			, String address) {
 		this.id = id;
@@ -21,7 +21,7 @@ public class LegalPerson implements ILegalPerson {
 		this.status = PersonStatus.legalPerson;
 	}
 
-	public int getId() {
+	public long getId() {
 
 		return id;
 	}
@@ -41,13 +41,21 @@ public class LegalPerson implements ILegalPerson {
 		return status;
 	}
 
-/*	void argumentsIsValid(String organizationName
-			, String address) {
-		if (organizationName == "" || address == "")
-			throw new IllegalArgumentException("Invalid arguments");
-	}*/
+	public void setId(long id) {
+		this.id = id;
+	}
 
+	public void setOrganizationName(String organizationName) {
+		this.organizationName = organizationName;
+	}
 
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public void setStatus(PersonStatus status) {
+		this.status = status;
+	}
 }
 
 

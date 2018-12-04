@@ -1,11 +1,14 @@
 package utils;
 
 import api.ICustomer;
+import data.IndemnifiedPerson;
+import data.LegalPerson;
+import data.PrivatePerson;
 import dict.PersonStatus;
-import entity.*;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
 import org.apache.commons.csv.CSVParser;
+import service.InsuranceContract;
 
 import java.time.LocalDate;
 
@@ -97,8 +100,8 @@ public class InsuranceReader {
 		);
 	}*/
 
-	private HashMap<Integer, IndemnifiedPerson> readPersonsContainer(CSVRecord record, int idx) {
-		HashMap<Integer, IndemnifiedPerson> personsMap = new HashMap<>();
+	private HashMap<Long, IndemnifiedPerson> readPersonsContainer(CSVRecord record, int idx) {
+		HashMap<Long, IndemnifiedPerson> personsMap = new HashMap<>();
 
 		int personsCount = Integer.parseInt(record.get(idx++));
 		for (int i = 0; i < personsCount; ++i) {
