@@ -8,6 +8,7 @@ import data.LegalPerson;
 import dict.PersonStatus;
 import org.junit.*;
 
+import org.junit.jupiter.api.BeforeEach;
 import service.InsuranceContract;
 import utils.*;
 import org.junit.rules.ExpectedException;
@@ -95,9 +96,28 @@ public class AppTest {
     }
 
 
-
     @Before
     public void initialize() {
+
+        /*clean db tables*/
+
+        try {
+            String dbName = "insurance_contracts";
+            Connection connection = null;
+            String url = "jdbc:mysql://localhost:3306/" + dbName;
+            String name = "root";
+            String password = "root";
+            connection = DriverManager.getConnection(url, name, password);
+            Statement statement = null;
+            statement = connection.createStatement();
+            statement.executeUpdate(" DROP TABLE IF EXISTS insurance_contracts.privatePersonsTable ");
+            statement.executeUpdate(" DROP TABLE IF EXISTS insurance_contracts.legalPersonsTable");
+            statement.executeUpdate(" DROP TABLE IF EXISTS insurance_contracts.insuranceContractsIndemnifiedPersonsTable");
+            statement.executeUpdate(" DROP TABLE IF EXISTS insurance_contracts.insuranceContractsTable");
+            statement.executeUpdate(" DROP TABLE IF EXISTS insurance_contracts.IndemnifiedPersonsTable");
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
 
         date1 = LocalDate.of(1999, 10, 10);
         date2 = LocalDate.of(1999, 12, 9);
@@ -126,38 +146,13 @@ public class AppTest {
         validateCustomer = new ValidateCustomer();
         validateIndemnifiedPerson = new ValidateIndemnifiedPerson();
 
-
-        daoIndemnifiedPerson = new DaoIndemnifiedPerson();
-        daoLegalPerson = new DaoLegalPerson();
-        daoPrivatePerson = new DaoPrivatePerson();
-        daoInsuranceContract = new DaoInsuranceContract();
-
-        /*clean db tables*/
-
-     /*   try {
-            String dbName = "insurance_contracts";
-            Connection connection = null;
-            String url = "jdbc:mysql://localhost:3306/" + dbName;
-            String name = "root";
-            String password = "root";
-            connection = DriverManager.getConnection(url, name, password);
-            Statement statement = null;
-            statement = connection.createStatement();
-            statement.executeUpdate(" DROP TABLE privatePersonsTable");
-            statement.executeUpdate(" DROP TABLE legalPersonsTable");
-            statement.executeUpdate(" DROP TABLE insuranceContractsIndemnifiedPersonsTable");
-            statement.executeUpdate(" DROP TABLE insuranceContractsTable");
-            statement.executeUpdate(" DROP TABLE IndemnifiedPersonsTable");
-        }catch (Exception ex){
-            ex.printStackTrace();
-        }*/
     }
 
     @Rule
     public ExpectedException thrown = ExpectedException.none();
 
-	@Test
-	public void invalidLegalPersonCreationTest() throws IllegalArgumentException {
+    @Test
+    public void invalidLegalPersonCreationTest() throws IllegalArgumentException {
         ICustomer legalPerson = factory.createCustomer(1, "", "HTZ");
 
         validateMap.putAll(validateCustomer.validate(legalPerson));
@@ -165,32 +160,31 @@ public class AppTest {
     }
 
 
-	@Test
-	public void invalidPrivatePersonCreationTest() throws IllegalArgumentException {
+    @Test
+    public void invalidPrivatePersonCreationTest() throws IllegalArgumentException {
 
-	    ICustomer privatePerson = factory.createCustomer(2, "Bob", "Ros", "Endy", "");
+        ICustomer privatePerson = factory.createCustomer(2, "Bob", "Ros", "Endy", "");
 
         validateMap.putAll(validateCustomer.validate(privatePerson));
-	    Assert.assertEquals(validateMap.get("address"), "empty address");
-	}
+        Assert.assertEquals(validateMap.get("address"), "empty address");
+    }
 
-	@Test
-	public void invalidDataIndemnifiedPersonCreationTest() throws IllegalArgumentException {
+    @Test
+    public void invalidDataIndemnifiedPersonCreationTest() throws IllegalArgumentException {
 
-	    IIndemnifiedPerson person  = factory.createIndemnifiedPerson(2, "Bob", "Ros", "Endy",  date5, 2000);
+        IIndemnifiedPerson person = factory.createIndemnifiedPerson(2, "Bob", "Ros", "Endy", date5, 2000);
         validateMap.putAll(validateIndemnifiedPerson.validate(person));
         Assert.assertEquals(validateMap.get("birthDate"), "birthDate doesn't exist");
-	}
+    }
 
-	@Test
-	public void invalidCostIndemnifiedPersonCreationTest() throws IllegalArgumentException {
+    @Test
+    public void invalidCostIndemnifiedPersonCreationTest() throws IllegalArgumentException {
 
-        IIndemnifiedPerson person  = factory.createIndemnifiedPerson(2, "Bob", "Ros", "Endy", date3,-1);
+        IIndemnifiedPerson person = factory.createIndemnifiedPerson(2, "Bob", "Ros", "Endy", date3, -1);
         validateMap.putAll(validateIndemnifiedPerson.validate(person));
         Assert.assertEquals(validateMap.get("cost"), "negative cost");
 
-	}
-
+    }
 
 
     @Test
@@ -354,6 +348,8 @@ public class AppTest {
     @Test
     public void DaoIndemnifiedPersonCreate() {
 
+        daoIndemnifiedPerson = new DaoIndemnifiedPerson();
+
         daoIndemnifiedPerson.create(indemnifiedPerson4);
         IIndemnifiedPerson readPerson = daoIndemnifiedPerson.read(indemnifiedPerson4.getId());
         Assert.assertTrue(compareIndemnifiedPerson(indemnifiedPerson4, readPerson));
@@ -362,6 +358,8 @@ public class AppTest {
 
     @Test
     public void DaoIndemnifiedPersonUpdate() {
+
+        daoIndemnifiedPerson = new DaoIndemnifiedPerson();
 
         daoIndemnifiedPerson.create(indemnifiedPerson3);
         indemnifiedPerson3.setMiddleName("Ivanov");
@@ -372,10 +370,12 @@ public class AppTest {
     }
 
     @Test
-    public void DaoLegalPersonCreate(){
+    public void DaoLegalPersonCreate() {
 
-        daoLegalPerson.create((ILegalPerson)customer1);
-        ILegalPerson readLegalPerson =  daoLegalPerson.read(customer1.getId());
+        daoLegalPerson = new DaoLegalPerson();
+
+        daoLegalPerson.create((ILegalPerson) customer1);
+        ILegalPerson readLegalPerson = daoLegalPerson.read(customer1.getId());
         Assert.assertTrue(compareLegalPerson((ILegalPerson) customer1, readLegalPerson));
         daoLegalPerson.delete(customer1.getId());
     }
@@ -383,20 +383,24 @@ public class AppTest {
     @Test
     public void DaoLegalPersonUpdate() {
 
-        daoLegalPerson.create((ILegalPerson)customer1);
+        daoLegalPerson = new DaoLegalPerson();
+
+        daoLegalPerson.create((ILegalPerson) customer1);
         customer1.setAddress("HTZ");
-        daoLegalPerson.update((ILegalPerson)customer1);
-        ILegalPerson readLegalPerson =  daoLegalPerson.read(customer1.getId());
+        daoLegalPerson.update((ILegalPerson) customer1);
+        ILegalPerson readLegalPerson = daoLegalPerson.read(customer1.getId());
         Assert.assertTrue(compareLegalPerson((ILegalPerson) customer1, readLegalPerson));
         daoLegalPerson.delete(customer1.getId());
     }
 
 
     @Test
-    public void DaoPrivatePersonCreate(){
+    public void DaoPrivatePersonCreate() {
+
+        daoPrivatePerson = new DaoPrivatePerson();
 
         daoPrivatePerson.create((IPrivatePerson) customer2);
-        IPrivatePerson readPrivatePerson =  daoPrivatePerson.read(customer2.getId());
+        IPrivatePerson readPrivatePerson = daoPrivatePerson.read(customer2.getId());
         Assert.assertTrue(comparePrivatePerson((IPrivatePerson) customer2, readPrivatePerson));
         daoPrivatePerson.delete(customer2.getId());
     }
@@ -404,16 +408,24 @@ public class AppTest {
     @Test
     public void DaoPrivatePersonUpdate() {
 
+        daoPrivatePerson = new DaoPrivatePerson();
+
         daoPrivatePerson.create((IPrivatePerson) customer2);
         customer2.setAddress("HTZ");
         daoPrivatePerson.update((IPrivatePerson) customer2);
-        IPrivatePerson readPrivatePerson =  daoPrivatePerson.read(customer2.getId());
+        IPrivatePerson readPrivatePerson = daoPrivatePerson.read(customer2.getId());
         Assert.assertTrue(comparePrivatePerson((IPrivatePerson) customer2, readPrivatePerson));
         daoPrivatePerson.delete(customer2.getId());
     }
 
     @Test
-    public void DaoInsuranceContractCreate(){
+    public void DaoInsuranceContractCreate() {
+
+        daoIndemnifiedPerson = new DaoIndemnifiedPerson();
+        daoLegalPerson = new DaoLegalPerson();
+        daoPrivatePerson = new DaoPrivatePerson();
+        daoInsuranceContract = new DaoInsuranceContract();
+
         insuranceContract1.addPerson(indemnifiedPerson1);
         daoInsuranceContract.create(insuranceContract1);
         IInsuranceContract readContract = daoInsuranceContract.read(insuranceContract1.getId());
@@ -423,11 +435,32 @@ public class AppTest {
         Assert.assertTrue(insuranceContract1.getContractExpireDate().equals(readContract.getContractExpireDate()));
         Assert.assertEquals(insuranceContract1.getCustomer().getId(), readContract.getCustomer().getId());
         Assert.assertEquals(insuranceContract1.getIndemnifiedPersonCollection().size(), readContract.getIndemnifiedPersonCollection().size());
-       daoIndemnifiedPerson.delete(indemnifiedPerson1.getId());
+        daoIndemnifiedPerson.delete(indemnifiedPerson1.getId());
         daoInsuranceContract.delete(readContract.getId());
     }
 
+    @Test
+    public void DaoInsuranceContractUpdate() {
 
+        daoIndemnifiedPerson = new DaoIndemnifiedPerson();
+        daoLegalPerson = new DaoLegalPerson();
+        daoPrivatePerson = new DaoPrivatePerson();
+        daoInsuranceContract = new DaoInsuranceContract();
 
+        insuranceContract2.addPerson(indemnifiedPerson1);
+        daoInsuranceContract.create(insuranceContract2);
+        insuranceContract2.addPerson(indemnifiedPerson2);
+        daoInsuranceContract.update(insuranceContract2);
+        IInsuranceContract readContract = daoInsuranceContract.read(insuranceContract2.getId());
+
+        Assert.assertTrue(insuranceContract2.getContractDate().equals(readContract.getContractDate()));
+        Assert.assertTrue(insuranceContract2.getContractEffectiveDate().equals(readContract.getContractEffectiveDate()));
+        Assert.assertTrue(insuranceContract2.getContractExpireDate().equals(readContract.getContractExpireDate()));
+        Assert.assertEquals(insuranceContract2.getCustomer().getId(), readContract.getCustomer().getId());
+        Assert.assertEquals(insuranceContract2.getIndemnifiedPersonCollection().size(), readContract.getIndemnifiedPersonCollection().size());
+        daoIndemnifiedPerson.delete(insuranceContract2.getId());
+        daoInsuranceContract.delete(readContract.getId());
     }
+
+}
 

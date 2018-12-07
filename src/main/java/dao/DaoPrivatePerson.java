@@ -139,7 +139,7 @@ public class DaoPrivatePerson implements IDao<IPrivatePerson> {
             statement = connection.createStatement();
 
             if (!hasPrivatePersonById(id)) {
-                throw new Exception("Didn't find privatePerson in db");
+                throw new IllegalStateException("Didn't find privatePerson in db");
             }
 
             statement.executeUpdate(" DELETE FROM "
@@ -148,9 +148,15 @@ public class DaoPrivatePerson implements IDao<IPrivatePerson> {
                     + id
                     + ";"
             );
-        } catch (Exception ex) {
+        }
+        catch( IllegalStateException ex )
+        {
+            throw ex;
+        }
+        catch (Exception ex) {
             ex.printStackTrace();
         }
+
     }
 
     public boolean hasPrivatePersonById(long id) {

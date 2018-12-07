@@ -77,7 +77,7 @@ public class DaoInsuranceContract implements IDao<IInsuranceContract> {
                     + "\"" + contract.getContractDate() + "\","
                     + "\"" + contract.getContractEffectiveDate() + "\","
                     + "\"" + contract.getContractExpireDate() + "\","
-                    + "\"" + contract.getCustomer().getId() + "\","
+                    + contract.getCustomer().getId() + ","
                     + "\"" + contract.getCustomer().getStatus().toString() + "\""
                     + ");";
 
@@ -149,17 +149,17 @@ public class DaoInsuranceContract implements IDao<IInsuranceContract> {
             updateCustomerFromDb(contract.getCustomer());
             UpdatePersonsFromDb(contract);
 
-            statement.executeUpdate(" UPDATE "
+            String rawQuery = " UPDATE "
                     + insuranceContractsTableName
                     + " SET "
                     + "contractDate=\"" + contract.getContractDate().toString() + "\","
                     + "contractEffectiveDate=\"" + contract.getContractEffectiveDate().toString() + "\","
                     + "contractExpireDate=\"" + contract.getContractExpireDate().toString() + "\","
                     + "customerId=\"" + contract.getCustomer().getId() + "\","
-                    + "customerStatus=\"" + contract.getCustomer().getStatus() + "\","
+                    + "customerStatus=\"" + contract.getCustomer().getStatus() + "\""
                     + " WHERE id = " + contract.getId()
-                    + ";"
-            );
+                    + ";";
+            statement.executeUpdate(rawQuery);
         } catch (Exception ex) {
             ex.printStackTrace();
         }
