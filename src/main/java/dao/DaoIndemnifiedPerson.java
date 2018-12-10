@@ -52,13 +52,6 @@ public class DaoIndemnifiedPerson implements IDao<IIndemnifiedPerson> {
 
     @Override
     public void create(IIndemnifiedPerson person) {
-//        try {
-//            Statement statement = null;
-//            statement = connection.createStatement();
-
-//            if (hasPersonById(person.getId())) {
-//                throw new Exception("Person already exists in db");
-//            }
 
         String rawQuery = "INSERT INTO "
                 + indemnifiedPersonsTableName
@@ -69,13 +62,6 @@ public class DaoIndemnifiedPerson implements IDao<IIndemnifiedPerson> {
                 + ",birthDate"
                 + ",cost)"
                 + " VALUES ( ?, ?, ?, ?, ?, ?);";
-//                    + person.getId() + ","
-//                    + "\"" + person.getLastName() + "\","
-//                    + "\"" + person.getFirstName() + "\","
-//                    + "\"" + person.getMiddleName() + "\","
-//                    + "\"" + person.getBirthDate().toString() + "\","
-//                    + person.getCost()
-//                    + ");";
 
         jdbcTemplate.update(
                 rawQuery
@@ -87,20 +73,10 @@ public class DaoIndemnifiedPerson implements IDao<IIndemnifiedPerson> {
                 , person.getCost()
         );
 
-//        } catch (Exception ex) {
-//            ex.printStackTrace();
-//        }
     }
 
     @Override
     public IIndemnifiedPerson read(long id) {
-//        try {
-//            Statement statement = null;
-//            statement = connection.createStatement();
-//
-//            if (!hasPersonById(id)) {
-//                throw new Exception("Didn't find person in db");
-//            }
 
         String rawQuery = "SELECT "
                 + " id, "
@@ -111,28 +87,7 @@ public class DaoIndemnifiedPerson implements IDao<IIndemnifiedPerson> {
                 + " cost "
                 + " FROM "
                 + indemnifiedPersonsTableName
-                + " WHERE id = ?;"
-                ;
-//            result.next();
-//            String lastName = result.getString("lastName");
-//            String firstName = result.getString("firstName");
-//            String middleName = result.getString("middleName");
-//            LocalDate birthDate = result.getDate("birthDate").toLocalDate();
-//            Double cost = result.getDouble("cost");
-//
-//            Factory factory = new Factory();
-//            return factory.createIndemnifiedPerson(
-//                    id
-//                    , lastName
-//                    , firstName
-//                    , middleName
-//                    , birthDate
-//                    , cost);
-//        } catch (Exception ex) {
-//            ex.printStackTrace();
-//        }
-//
-//        return null;
+                + " WHERE id = ?;";
 
         IIndemnifiedPerson person = (IIndemnifiedPerson) jdbcTemplate.queryForObject(
                 rawQuery, new Object[]{id}, new IndemnifiedPersonMapper()

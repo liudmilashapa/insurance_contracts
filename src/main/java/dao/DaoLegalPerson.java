@@ -49,21 +49,14 @@ public class DaoLegalPerson implements IDao<ILegalPerson> {
 
     @Override
     public void create(ILegalPerson legalPerson) {
-//        try {
-//            Statement statement = null;
-//            statement = connection.createStatement();
+
         String rawQuery = "INSERT INTO "
                 + legalPersonsTableName
                 + "(id"
                 + ",organizationName"
                 + ",address)"
                 + " VALUES ( ?, ?, ?, ?);";
-//                    + legalPerson.getId() + ","
-//                    + "\"" + legalPerson.getOrganizationName() + "\","
-//                    + "\"" + legalPerson.getAddress() + "\""
-//                    + ");";
 
-//            statement.executeUpdate(rawQuery);
 
         jdbcTemplate.update(
                 rawQuery
@@ -71,22 +64,12 @@ public class DaoLegalPerson implements IDao<ILegalPerson> {
                 , legalPerson.getOrganizationName()
                 , legalPerson.getAddress()
         );
-//       } catch (Exception ex) {
-//            ex.printStackTrace();
-//        }
+
     }
 
     @Override
     public ILegalPerson read(long id) {
-/*
-            try {
-                Statement statement = null;
-                statement = connection.createStatement();
 
-                if (!hasLegalPersonById(id)) {
-                    throw new Exception("Didn't find legalPerson in db");
-                }
-*/
         String rawQuery = "SELECT "
                 + " id "
                 + ",organizationName"
@@ -98,25 +81,9 @@ public class DaoLegalPerson implements IDao<ILegalPerson> {
         ILegalPerson person = (ILegalPerson) jdbcTemplate.queryForObject(
                 rawQuery, new Object[]{id}, new LegalPersonMapper()
         );
+
         return person;
-            /*
-                    ResultSet result = statement.executeQuery(
-                );
-                result.next();
-                String organizationName = result.getString("organizationName");
-                String address = result.getString("address");
-                Factory factory = new Factory();
-                return (ILegalPerson) factory.createCustomer(
-                        id
-                        , organizationName
-                        , address);
 
-            } catch (Exception ex) {
-                ex.printStackTrace();
-            }
-
-            return null;
-        */
     }
 
     @Override

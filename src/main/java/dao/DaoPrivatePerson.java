@@ -51,9 +51,7 @@ public class DaoPrivatePerson implements IDao<IPrivatePerson> {
 
     @Override
     public void create(IPrivatePerson privatePerson) {
-//        try {
-//            Statement statement = null;
-//            statement = connection.createStatement();
+
         String rawQuery = "INSERT INTO "
                 + privatePersonsTableName
                 + "(id"
@@ -62,14 +60,6 @@ public class DaoPrivatePerson implements IDao<IPrivatePerson> {
                 + ",MiddleName"
                 + ",address)"
                 + " VALUES (?, ?, ?, ?, ?, ?);";
-                   /* + privatePerson.getId() + ","
-                    + "\"" + privatePerson.getLastName() + "\","
-                    + "\"" + privatePerson.getFirstName() + "\","
-                    + "\"" + privatePerson.getMiddleName() + "\","
-                    + "\"" + privatePerson.getAddress() + "\""
-                    + ");";
-
-            statement.executeUpdate(rawQuery);*/
 
         jdbcTemplate.update(
                 rawQuery
@@ -80,22 +70,11 @@ public class DaoPrivatePerson implements IDao<IPrivatePerson> {
                 , privatePerson.getAddress()
         );
 
-/*        } catch (Exception ex) {
-            ex.printStackTrace();
-        }*/
     }
 
     @Override
     public IPrivatePerson read(long id) {
 
- /*       try {
-            Statement statement = null;
-            statement = connection.createStatement();
-
-            if (!hasPrivatePersonById(id)) {
-                throw new Exception("Didn't find privatePerson in db");
-            }
-*/
         String rawQuery = "SELECT "
                 + " id "
                 + ",LastName"
@@ -109,33 +88,13 @@ public class DaoPrivatePerson implements IDao<IPrivatePerson> {
         IPrivatePerson person = (IPrivatePerson) jdbcTemplate.queryForObject(
                 rawQuery, new Object[]{id}, new PrivatePersonMapper()
         );
+
         return person;
-
-         /*   result.next();
-            String lastName = result.getString("lastName");
-            String firstName = result.getString("firstName");
-            String middleName = result.getString("middleName");
-            String address = result.getString("address");
-            Factory factory = new Factory();
-            return (IPrivatePerson) factory.createCustomer(
-                    id
-                    , lastName
-                    , firstName
-                    , middleName
-                    , address);
-
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-
-        return null;*/
     }
 
     @Override
     public void update(IPrivatePerson privatePerson) {
         try {
-//            Statement statement = null;
-//            statement = connection.createStatement();
 
             if (!hasPrivatePersonById(privatePerson.getId())) {
                 throw new Exception("Didn't find privatePerson in db");
@@ -163,8 +122,6 @@ public class DaoPrivatePerson implements IDao<IPrivatePerson> {
     @Override
     public void delete(long id) {
         try {
-//            Statement statement = null;
-//            statement = connection.createStatement();
 
             if (!hasPrivatePersonById(id)) {
                 throw new IllegalStateException("Didn't find privatePerson in db");

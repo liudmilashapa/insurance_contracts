@@ -2,11 +2,11 @@ package dao;
 
 import api.*;
 import dict.PersonStatus;
-import dao.DaoPrivatePerson;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.jdbc.core.JdbcTemplate;
-import utils.Factory;
+
 
 import javax.sql.DataSource;
 import java.sql.Connection;
@@ -71,10 +71,6 @@ public class DaoInsuranceContract implements IDao<IInsuranceContract> {
     public void create(IInsuranceContract contract) {
         addCustomerToDb(contract.getCustomer());
         addPersonsToDb(contract.getIndemnifiedPersonCollection());
-//        try {
-//            Statement statement = null;
-//            statement = connection.createStatement();
-
 
             String rawQuery = "INSERT INTO "
                     + insuranceContractsTableName
@@ -85,17 +81,8 @@ public class DaoInsuranceContract implements IDao<IInsuranceContract> {
                     + ",customerId"
                     + ",customerStatus)"
                     + " VALUES (?, ?, ?, ?, ?, ?);";
-              /*      + contract.getId() + ","
-                    + "\"" + contract.getContractDate() + "\","
-                    + "\"" + contract.getContractEffectiveDate() + "\","
-                    + "\"" + contract.getContractExpireDate() + "\","
-                    + contract.getCustomer().getId() + ","
-                    + "\"" + contract.getCustomer().getStatus().toString() + "\""
-                    + ");";*/
 
-       /*     statement.executeUpdate(rawQuery);
-            addInsuranceContractsIndemnifiedPersonsTable(contract);
-*/
+
         jdbcTemplate.update(
                 rawQuery
                 , contract.getId()
@@ -106,21 +93,10 @@ public class DaoInsuranceContract implements IDao<IInsuranceContract> {
                 , contract.getCustomer().getStatus()
         );
 
- /*       } catch (Exception ex) {
-            ex.printStackTrace();
-        }*/
-
     }
 
     @Override
     public IInsuranceContract read(long id) {
-//        try {
-//            Statement statement = null;
-//            statement = connection.createStatement();
-//
-//            if (!hasContractById(id)) {
-//                throw new Exception("Didn't find contract in db");
-//            }
 
         String rawQuery = "SELECT "
                 + " id "
@@ -133,28 +109,6 @@ public class DaoInsuranceContract implements IDao<IInsuranceContract> {
                 + insuranceContractsTableName
                 + " WHERE id = ?;"
                 ;
-           /* result.next();
-            LocalDate contractDate = result.getDate("contractDate").toLocalDate();
-            LocalDate contractEffectiveDate = result.getDate("contractEffectiveDate").toLocalDate();
-            LocalDate contractExpireDate = result.getDate("contractExpireDate").toLocalDate();
-            Long customerId = result.getLong("customerId");
-            PersonStatus status = PersonStatus.valueOf(result.getString("customerStatus"));
-            ICustomer customer = readCustomerFromDb(customerId, status);
-
-            Factory factory = new Factory();
-            IInsuranceContract contract = factory.createInsuranceContract(id
-                    , contractDate
-                    , contractEffectiveDate
-                    , contractExpireDate
-                    , customer);
-            ReadPersonsFromDb(contract);
-            return contract;
-
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-
-        return null;*/
 
         IInsuranceContract insuranceContract = (IInsuranceContract) jdbcTemplate.queryForObject(
                 rawQuery, new Object[]{id}, new InsuranceContractMapper()
@@ -167,8 +121,6 @@ public class DaoInsuranceContract implements IDao<IInsuranceContract> {
     @Override
     public void update(IInsuranceContract contract) {
         try {
-//            Statement statement = null;
-//            statement = connection.createStatement();
 
             if (!hasContractById(contract.getId())) {
                 throw new Exception("Didn't find contract in db");
@@ -251,17 +203,6 @@ public class DaoInsuranceContract implements IDao<IInsuranceContract> {
         }
     }
 
-   /* private ICustomer readCustomerFromDb(Long customerId, PersonStatus status) {
-        if (status == PersonStatus.privatePerson) {
-            DaoPrivatePerson privatePerson = new DaoPrivatePerson();
-            return privatePerson.read(customerId);
-        } else {
-            DaoLegalPerson legalPerson = new DaoLegalPerson();
-            return legalPerson.read(customerId);
-        }
-
-    }*/
-
     private void deleteCustomerFromDb(Long contractId) {
         try {
             Statement statement = null;
@@ -311,10 +252,10 @@ public class DaoInsuranceContract implements IDao<IInsuranceContract> {
 
     private void addPersonsToDb(HashMap<Long, IIndemnifiedPerson> personHashMap) {
         if (personHashMap.size() != 0) {
-            // context should be passed to insurance contract dao
-//            ApplicationContext context = new ClassPathXmlApplicationContext("jdbc-template-config.xml");
-//            DaoIndemnifiedPerson personDao = (DaoIndemnifiedPerson) context.getBean("jdbcTemplateIndemnifiedPersonDao");
-            DaoIndemnifiedPerson personDao = new DaoIndemnifiedPerson();
+
+            ApplicationContext context = new ClassPathXmlApplicationContext("jdbc-template-config.xml");
+            DaoIndemnifiedPerson personDao = (DaoIndemnifiedPerson) context.getBean("jdbcTemplateIndemnifiedPersonDao");
+
             for (IIndemnifiedPerson person : personHashMap.values()) {
                 if (!personDao.hasPersonById(person.getId())) {
                     personDao.create(person);
