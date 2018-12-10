@@ -11,8 +11,8 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/insuranecontracts$AppTest.ic" NAME="AppTest Coverage Results" MODIFIED="1542328014575" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/insuranecontracts$AppTest_writeAndReadTest.ic" NAME="AppTest.writeAndReadTest Coverage Results" MODIFIED="1543305397519" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/insuranecontracts$AppTest.ic" NAME="AppTest Coverage Results" MODIFIED="1542328014575" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="CoverageViewManager">
     <option name="myAutoScrollToSource" value="true" />
@@ -153,141 +153,68 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="-927780702">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.11" value="1" />
+          <entry key="project.opened" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="class" value="26" />
+          <entry key="java" value="27" />
+          <entry key="sql" value="1" />
+          <entry key="xml" value="7" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CLASS" value="26" />
+          <entry key="JAVA" value="27" />
+          <entry key="SQL" value="1" />
+          <entry key="XML" value="7" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="1793" />
+          <entry key="xml" value="125" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="1790" />
+          <entry key="SQL" value="3" />
+          <entry key="XML" value="125" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5278571">
+    <splitter split-orientation="horizontal" split-proportion="0.4877687">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/test/java/AppTest.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="486">
-                  <caret line="450" column="40" selection-start-line="450" selection-start-column="40" selection-end-line="450" selection-end-column="40" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/pom.xml">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="544">
-                  <caret line="32" column="30" selection-start-line="30" selection-start-column="18" selection-end-line="32" selection-end-column="30" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/InsuranceContracts.iml">
-              <provider selected="true" editor-type-id="text-editor" />
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/service/InsuranceContract.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1122">
-                  <caret line="84" column="5" selection-start-line="84" selection-start-column="5" selection-end-line="84" selection-end-column="5" />
-                  <folding>
-                    <element signature="method#getContractDate#0;class#InsuranceContract#0" />
-                    <element signature="method#getContractEffectiveDate#0;class#InsuranceContract#0" />
-                    <element signature="method#getContractExpireDate#0;class#InsuranceContract#0" />
-                    <element signature="method#getCustomer#0;class#InsuranceContract#0" />
-                    <element signature="method#sortInsurancePersonByName#0;class#InsuranceContract#0" />
-                    <element signature="method#sortInsurancePersonBirthDate#0;class#InsuranceContract#0" />
-                    <element signature="method#indemnifiedPersonDateIsValid#0;class#InsuranceContract#0" />
-                    <element signature="method#indemnifiedPersonIdIsValid#0;class#InsuranceContract#0" />
-                    <element signature="method#insuredSumByLambda#0;class#InsuranceContract#0" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/runners/ParentRunner.class">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2550">
-                  <caret line="203" selection-start-line="203" selection-end-line="203" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/data/IndemnifiedPerson.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="68">
-                  <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-                  <folding>
-                    <element signature="method#IndemnifiedPerson#0;class#IndemnifiedPerson#0" />
-                    <element signature="method#getLastName#0;class#IndemnifiedPerson#0" />
-                    <element signature="method#getFirstName#0;class#IndemnifiedPerson#0" />
-                    <element signature="method#getMiddleName#0;class#IndemnifiedPerson#0" />
-                    <element signature="method#getBirthDate#0;class#IndemnifiedPerson#0" />
-                    <element signature="method#getCost#0;class#IndemnifiedPerson#0" />
-                    <element signature="method#getFullName#0;class#IndemnifiedPerson#0" />
-                    <element signature="method#setId#0;class#IndemnifiedPerson#0" />
-                    <element signature="method#setLastName#0;class#IndemnifiedPerson#0" />
-                    <element signature="method#setFirstName#0;class#IndemnifiedPerson#0" />
-                    <element signature="method#setMiddleName#0;class#IndemnifiedPerson#0" />
-                    <element signature="method#setBirthDate#0;class#IndemnifiedPerson#0" />
-                    <element signature="method#getNameWithInitials#0;class#IndemnifiedPerson#0" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/dao/DaoIndemnifiedPerson.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2244">
-                  <caret line="155" selection-start-line="155" selection-end-line="155" />
+                <state relative-caret-position="619">
+                  <caret line="479" lean-forward="true" selection-start-line="479" selection-end-line="479" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="method#update#0;class#DaoIndemnifiedPerson#0" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/utils/InsuranceReader.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1003">
-                  <caret line="79" column="42" selection-start-line="79" selection-start-column="42" selection-end-line="79" selection-end-column="42" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/api/IInsuranceContract.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="493">
-                  <caret line="30" selection-start-line="30" selection-end-line="30" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/api/ICustomer.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="272">
-                  <caret line="16" column="43" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/main/java/dao/DaoPrivatePerson.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="116">
-                  <caret line="141" column="47" selection-start-line="141" selection-start-column="26" selection-end-line="141" selection-end-column="47" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
+                    <element signature="e#1760#2321#0" />
+                    <element signature="e#2327#2674#0" />
+                    <element signature="e#2680#3209#0" />
+                    <element signature="e#5673#5998#0" />
+                    <element signature="e#6005#6334#0" />
+                    <element signature="e#6716#7070#0" />
+                    <element signature="e#7077#7561#0" />
+                    <element signature="e#8899#9177#0" />
+                    <element signature="e#9183#9544#0" />
+                    <element signature="e#9550#13853#0" />
+                    <marker date="1544402989903" expanded="true" signature="17597:18761" ph="..." />
                   </folding>
                 </state>
               </provider>
@@ -296,12 +223,11 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/dao/DaoInsuranceContract.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2975">
-                  <caret line="187" selection-start-line="187" selection-end-line="187" />
+                <state relative-caret-position="-482">
+                  <caret line="159" column="73" selection-start-line="159" selection-start-column="73" selection-end-line="159" selection-end-column="73" />
                   <folding>
+                    <element signature="imports" expanded="true" />
                     <element signature="method#hasContractById#0;class#DaoInsuranceContract#0" />
-                    <element signature="method#addPersonsToDb#0;class#DaoInsuranceContract#0" />
-                    <element signature="method#ReadPersonsFromDb#0;class#DaoInsuranceContract#0" />
                     <element signature="method#addInsuranceContractsIndemnifiedPersonsTable#0;class#DaoInsuranceContract#0" />
                   </folding>
                 </state>
@@ -309,68 +235,95 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/8.0.13/mysql-connector-java-8.0.13.jar!/com/mysql/cj/jdbc/NonRegisteringDriver.class">
+            <entry file="file://$PROJECT_DIR$/src/main/java/dao/InsuranceContractMapper.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="544">
-                  <caret line="70" selection-start-line="70" selection-end-line="70" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/data/PrivatePerson.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="391">
-                  <caret line="24" column="12" selection-start-line="20" selection-end-line="24" selection-end-column="12" />
-                  <folding>
-                    <element signature="method#getLastName#0;class#PrivatePerson#0" />
-                    <element signature="method#getFirstName#0;class#PrivatePerson#0" />
-                    <element signature="method#getMiddleName#0;class#PrivatePerson#0" />
-                    <element signature="method#getAddress#0;class#PrivatePerson#0" />
-                    <element signature="method#getStatus#0;class#PrivatePerson#0" />
-                    <element signature="e#945#946#0" expanded="true" />
-                    <element signature="e#964#965#0" expanded="true" />
-                    <element signature="e#1009#1010#0" expanded="true" />
-                    <element signature="e#1040#1041#0" expanded="true" />
-                    <element signature="e#1087#1088#0" expanded="true" />
-                    <element signature="e#1120#1121#0" expanded="true" />
-                    <element signature="e#1169#1170#0" expanded="true" />
-                    <element signature="e#1204#1205#0" expanded="true" />
-                    <element signature="e#1258#1259#0" expanded="true" />
-                    <element signature="e#1287#1288#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/utils/Factory.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="663">
-                  <caret line="56" column="31" selection-start-line="56" selection-start-column="31" selection-end-line="56" selection-end-column="31" />
+                <state relative-caret-position="112">
+                  <caret line="13" column="58" selection-start-line="13" selection-start-column="58" selection-end-line="13" selection-end-column="58" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="method#createInsuranceContract#0;class#Factory#0" />
-                    <element signature="method#createInsuranceContract#1;class#Factory#0" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/api/ILegalPerson.java">
+            <entry file="file://$PROJECT_DIR$/src/main/java/dao/IDao.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="136">
-                  <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+                <state relative-caret-position="68">
+                  <caret line="4" selection-start-line="4" selection-end-line="4" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/api/IPrivatePerson.java">
+            <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/runner/JUnitCore.class">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="272">
-                  <caret line="16" selection-start-line="16" selection-end-line="16" />
+                <state relative-caret-position="332">
+                  <caret line="76" selection-start-line="76" selection-end-line="76" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/main/java/dao/IndemnifiedPersonMapper.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="187">
+                  <caret line="11" column="57" selection-start-line="11" selection-start-column="48" selection-end-line="11" selection-end-column="57" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/dao/DaoPrivatePerson.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="2392">
+                  <caret line="197" column="33" selection-start-line="197" selection-start-column="33" selection-end-line="197" selection-end-column="33" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/dao/LegalPersonMapper.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="187">
+                  <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/dao/DaoIndemnifiedPerson.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-146">
+                  <caret line="113" column="31" selection-start-line="113" selection-start-column="31" selection-end-line="113" selection-end-column="31" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/dao/DaoLegalPerson.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="525">
+                  <caret line="142" selection-start-line="142" selection-end-line="142" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -384,19 +337,14 @@
       <list>
         <option value="Enum" />
         <option value="Interface" />
+        <option value="spring-beans.schema" />
+        <option value="XML Properties File" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Map</find>
-      <find>thr</find>
-      <find>fa</find>
-      <find>father</find>
-      <find>cu</find>
-      <find>fi</find>
-      <find>fin</find>
       <find>customerC</find>
       <find>fat</find>
       <find>legalPerson</find>
@@ -420,6 +368,13 @@
       <find>hasContractById</find>
       <find>indemnifiedPerson1</find>
       <find>insuranceContract</find>
+      <find>path</find>
+      <find>IndemnifiedPersonMapper</find>
+      <find>SELECT</find>
+      <find>contractDate</find>
+      <find>setDataSource</find>
+      <find>personID</find>
+      <find>mapRow</find>
     </findStrings>
     <replaceStrings>
       <replace>HashMap</replace>
@@ -440,14 +395,12 @@
         <option value="$PROJECT_DIR$/src/main/java/api/IInsurenceContract.java" />
         <option value="$PROJECT_DIR$/src/main/java/validate/Validate.java" />
         <option value="$PROJECT_DIR$/src/main/java/validate/IValidate.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/dao/test_dao.java" />
         <option value="$PROJECT_DIR$/src/main/java/validate/ValidateIndemnifiedPerson.java" />
         <option value="$PROJECT_DIR$/src/main/java/validate/ValidateInsuranceContract.java" />
         <option value="$PROJECT_DIR$/src/main/java/validate/ValidatePrivatePerson.java" />
         <option value="$PROJECT_DIR$/src/main/java/validate/ValidateLegalPerson.java" />
         <option value="$PROJECT_DIR$/src/main/java/validate/ValidateCustomer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dao/IDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/api/IEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/api/IFactory.java" />
         <option value="$PROJECT_DIR$/src/main/java/entity/Factory.java" />
@@ -460,7 +413,6 @@
         <option value="$PROJECT_DIR$/src/main/java/utils/InsuranceReader.java" />
         <option value="$PROJECT_DIR$/src/main/java/entity/InsuranceContract.java" />
         <option value="$PROJECT_DIR$/src/main/java/api/IInsuranceContract.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dao/DaoIndemnifiedPerson.java" />
         <option value="$PROJECT_DIR$/src/main/java/dao/DaoCustomer.java" />
         <option value="$PROJECT_DIR$/src/main/java/api/ILegalPerson.java" />
         <option value="$PROJECT_DIR$/src/main/java/data/LegalPerson.java" />
@@ -468,11 +420,21 @@
         <option value="$PROJECT_DIR$/src/main/java/api/ICustomer.java" />
         <option value="$PROJECT_DIR$/src/main/java/data/PrivatePerson.java" />
         <option value="$PROJECT_DIR$/src/main/java/api/IPrivatePerson.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dao/DaoLegalPerson.java" />
         <option value="$PROJECT_DIR$/src/main/java/service/InsuranceContract.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dao/DaoInsuranceContract.java" />
-        <option value="$PROJECT_DIR$/src/test/java/AppTest.java" />
+        <option value="$PROJECT_DIR$/jdbctemplate-config.xml.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/dao/IDao.java" />
+        <option value="$PROJECT_DIR$/jdbctemplate-config.xml" />
+        <option value="$PROJECT_DIR$/jdbc-template-config.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/dao/LegalPersonMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/dao/PrivatePersonMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/dao/DaoPrivatePerson.java" />
+        <option value="$PROJECT_DIR$/src/main/java/dao/IndemnifiedPersonMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/dao/DaoLegalPerson.java" />
+        <option value="$PROJECT_DIR$/src/main/java/dao/DaoInsuranceContract.java" />
+        <option value="$PROJECT_DIR$/src/main/java/dao/DaoIndemnifiedPerson.java" />
+        <option value="$PROJECT_DIR$/src/main/java/dao/InsuranceContractMapper.java" />
+        <option value="$PROJECT_DIR$/src/test/java/AppTest.java" />
       </list>
     </option>
   </component>
@@ -511,6 +473,7 @@
     <option name="width" value="1382" />
     <option name="height" value="744" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -523,48 +486,29 @@
           <expand>
             <path>
               <item name="insuranecontracts" type="b2602c69:ProjectViewProjectNode" />
-              <item name="insurance_contracts" type="462c0819:PsiDirectoryNode" />
+              <item name="insurance_contracts-master" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="insuranecontracts" type="b2602c69:ProjectViewProjectNode" />
-              <item name="insurance_contracts" type="462c0819:PsiDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="insuranecontracts" type="b2602c69:ProjectViewProjectNode" />
-              <item name="insurance_contracts" type="462c0819:PsiDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
-              <item name="codeStyles" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="insuranecontracts" type="b2602c69:ProjectViewProjectNode" />
-              <item name="insurance_contracts" type="462c0819:PsiDirectoryNode" />
+              <item name="insurance_contracts-master" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="insuranecontracts" type="b2602c69:ProjectViewProjectNode" />
-              <item name="insurance_contracts" type="462c0819:PsiDirectoryNode" />
+              <item name="insurance_contracts-master" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="insuranecontracts" type="b2602c69:ProjectViewProjectNode" />
-              <item name="insurance_contracts" type="462c0819:PsiDirectoryNode" />
+              <item name="insurance_contracts-master" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="insuranecontracts" type="b2602c69:ProjectViewProjectNode" />
-              <item name="insurance_contracts" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="insuranecontracts" type="b2602c69:ProjectViewProjectNode" />
-              <item name="insurance_contracts" type="462c0819:PsiDirectoryNode" />
+              <item name="insurance_contracts-master" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -572,21 +516,20 @@
             </path>
             <path>
               <item name="insuranecontracts" type="b2602c69:ProjectViewProjectNode" />
-              <item name="insurance_contracts" type="462c0819:PsiDirectoryNode" />
+              <item name="insurance_contracts-master" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="insuranecontracts" type="b2602c69:ProjectViewProjectNode" />
-              <item name="insurance_contracts" type="462c0819:PsiDirectoryNode" />
+              <item name="insurance_contracts-master" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="insuranecontracts" type="b2602c69:ProjectViewProjectNode" />
-              <item name="insurance_contracts" type="462c0819:PsiDirectoryNode" />
+              <item name="insurance_contracts-master" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -601,12 +544,21 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://D:/Projects/InsuranceContracts/src/main/java/entity/PersonStatus.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544141483998" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544403053415" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.ChangelistConflict" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Projects\Java\insurance_contracts-master\src\main" />
+      <recent name="C:\Projects\Java\insurance_contracts-master\src\main\java\resources" />
+      <recent name="C:\Projects\Java\insurance_contracts-master\src" />
+      <recent name="C:\Projects\Java\insurance_contracts-master\src\resources\resources" />
+      <recent name="C:\Projects\Java\insurance_contracts-master\src\resources" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -620,10 +572,9 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.App">
+  <component name="RunManager" selected="JUnit.AppTest.invalidDataIndemnifiedPersonCreationTest">
     <configuration name="App" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="demo.Demo" />
-      <module name="InsuranceContracts" />
+      <option name="MAIN_CLASS_NAME" value="AppTest" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -648,16 +599,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AppTest.DaoLegalPersonUpdate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="insurane-contracts" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="AppTest" />
-      <option name="METHOD_NAME" value="DaoLegalPersonUpdate" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="AppTest.DaoPrivatePersonCreate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="insurane-contracts" />
       <option name="PACKAGE_NAME" value="" />
@@ -673,6 +614,16 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="AppTest" />
       <option name="METHOD_NAME" value="DaoPrivatePersonUpdate" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AppTest.invalidDataIndemnifiedPersonCreationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="insurane-contracts" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="AppTest" />
+      <option name="METHOD_NAME" value="invalidDataIndemnifiedPersonCreationTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -706,19 +657,19 @@
     <list>
       <item itemvalue="Application.App" />
       <item itemvalue="Maven.Unnamed" />
-      <item itemvalue="JUnit.AppTest.DaoLegalPersonUpdate" />
       <item itemvalue="JUnit.AppTest.DaoPrivatePersonCreate" />
       <item itemvalue="JUnit.AppTest.DaoPrivatePersonUpdate" />
       <item itemvalue="JUnit.AppTest.DaoInsuranceContractCreate" />
       <item itemvalue="JUnit.AppTest.DaoInsuranceContractUpdate" />
+      <item itemvalue="JUnit.AppTest.invalidDataIndemnifiedPersonCreationTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.AppTest.DaoInsuranceContractUpdate" />
+        <item itemvalue="JUnit.AppTest.invalidDataIndemnifiedPersonCreationTest" />
         <item itemvalue="JUnit.AppTest.DaoInsuranceContractCreate" />
+        <item itemvalue="JUnit.AppTest.DaoInsuranceContractUpdate" />
         <item itemvalue="JUnit.AppTest.DaoPrivatePersonUpdate" />
         <item itemvalue="JUnit.AppTest.DaoPrivatePersonCreate" />
-        <item itemvalue="JUnit.AppTest.DaoLegalPersonUpdate" />
       </list>
     </recent_temporary>
   </component>
@@ -737,43 +688,45 @@
       <workItem from="1543919393546" duration="1381000" />
       <workItem from="1544130181971" duration="5289000" />
       <workItem from="1544141583079" duration="121000" />
+      <workItem from="1544380652224" duration="9436000" />
+      <workItem from="1544390636189" duration="11083000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="AppTest_DaoPrivatePersonCreate - 2018.12.07 at 00h 33m 13s.xml">
-      <configuration name="AppTest.DaoPrivatePersonCreate" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AppTest_DaoPrivatePersonUpdate - 2018.12.07 at 00h 33m 20s.xml">
-      <configuration name="AppTest.DaoPrivatePersonUpdate" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AppTest_DaoInsuranceContractCreate - 2018.12.07 at 00h 33m 28s.xml">
+    <history-entry file="AppTest_DaoInsuranceContractCreate - 2018.12.09 at 23h 09m 01s.xml">
       <configuration name="AppTest.DaoInsuranceContractCreate" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AppTest_DaoInsuranceContractUpdate - 2018.12.07 at 00h 33m 42s.xml">
-      <configuration name="AppTest.DaoInsuranceContractUpdate" configurationId="JUnit" />
+    <history-entry file="AppTest_DaoInsuranceContractCreate - 2018.12.09 at 23h 09m 09s.xml">
+      <configuration name="AppTest.DaoInsuranceContractCreate" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AppTest_DaoInsuranceContractUpdate - 2018.12.07 at 00h 36m 16s.xml">
-      <configuration name="AppTest.DaoInsuranceContractUpdate" configurationId="JUnit" />
+    <history-entry file="AppTest_DaoInsuranceContractCreate - 2018.12.09 at 23h 11m 14s.xml">
+      <configuration name="AppTest.DaoInsuranceContractCreate" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AppTest_DaoInsuranceContractUpdate - 2018.12.07 at 00h 44m 08s.xml">
-      <configuration name="AppTest.DaoInsuranceContractUpdate" configurationId="JUnit" />
+    <history-entry file="AppTest_DaoInsuranceContractCreate - 2018.12.09 at 23h 11m 20s.xml">
+      <configuration name="AppTest.DaoInsuranceContractCreate" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AppTest_DaoInsuranceContractUpdate - 2018.12.07 at 00h 54m 32s.xml">
-      <configuration name="AppTest.DaoInsuranceContractUpdate" configurationId="JUnit" />
+    <history-entry file="AppTest_DaoInsuranceContractCreate - 2018.12.09 at 23h 24m 43s.xml">
+      <configuration name="AppTest.DaoInsuranceContractCreate" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AppTest_DaoInsuranceContractUpdate - 2018.12.07 at 00h 57m 02s.xml">
-      <configuration name="AppTest.DaoInsuranceContractUpdate" configurationId="JUnit" />
+    <history-entry file="AppTest_DaoInsuranceContractCreate - 2018.12.09 at 23h 44m 20s.xml">
+      <configuration name="AppTest.DaoInsuranceContractCreate" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AppTest_DaoInsuranceContractUpdate - 2018.12.07 at 00h 59m 59s.xml">
-      <configuration name="AppTest.DaoInsuranceContractUpdate" configurationId="JUnit" />
+    <history-entry file="AppTest_invalidDataIndemnifiedPersonCreationTest - 2018.12.09 at 23h 46m 49s.xml">
+      <configuration name="AppTest.invalidDataIndemnifiedPersonCreationTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AppTest_DaoInsuranceContractUpdate - 2018.12.07 at 02h 13m 39s.xml">
-      <configuration name="AppTest.DaoInsuranceContractUpdate" configurationId="JUnit" />
+    <history-entry file="AppTest_invalidDataIndemnifiedPersonCreationTest - 2018.12.09 at 23h 50m 36s.xml">
+      <configuration name="AppTest.invalidDataIndemnifiedPersonCreationTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AppTest_invalidDataIndemnifiedPersonCreationTest - 2018.12.10 at 02h 48m 41s.xml">
+      <configuration name="AppTest.invalidDataIndemnifiedPersonCreationTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AppTest_invalidDataIndemnifiedPersonCreationTest - 2018.12.10 at 02h 49m 56s.xml">
+      <configuration name="AppTest.invalidDataIndemnifiedPersonCreationTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58665000" />
+    <option name="totallyTimeSpent" value="79184000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -786,32 +739,34 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8246753" visible="true" weight="0.1716418" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8246753" visible="true" weight="0.1977612" />
       <window_info id="Structure" order="1" sideWeight="0.17532468" side_tool="true" weight="0.16684435" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.10195228" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.87526655" weight="0.29284164" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.67803836" weight="0.3308026" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.3289689" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.4989339" weight="0.32827735" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.12473348" side_tool="true" weight="0.164859" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.31561822" />
+      <window_info anchor="bottom" id="Spring" order="0" weight="0.3286334" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.10107817" />
+      <window_info active="true" anchor="bottom" id="Run" order="3" sideWeight="0.8746787" visible="true" weight="0.11713666" />
+      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.67803836" weight="0.329718" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="7" weight="0.32884097" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4989339" weight="0.3253796" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.12532134" side_tool="true" weight="0.29245284" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.3286334" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.31453362" />
       <window_info anchor="right" id="Palette" order="0" />
       <window_info anchor="right" id="Theme Preview" order="1" />
       <window_info anchor="right" id="Capture Analysis" order="2" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="4" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Maven Projects" order="5" sideWeight="0.827622" visible="true" weight="0.0836887" />
+      <window_info anchor="right" id="Maven Projects" order="5" sideWeight="0.827622" visible="true" weight="0.08315565" />
       <window_info anchor="right" id="Ant Build" order="6" weight="0.2496112" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="7" weight="0.25" />
       <window_info anchor="right" id="Coverage" order="8" sideWeight="0.17237799" side_tool="true" visible="true" weight="0.29371002" />
@@ -829,21 +784,15 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/dao/DaoInsuranceContract.java</url>
-          <line>326</line>
+          <line>363</line>
           <properties />
           <option name="timeStamp" value="35" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/dao/DaoInsuranceContract.java</url>
-          <line>170</line>
+          <url>file://$PROJECT_DIR$/src/main/java/dao/DaoIndemnifiedPerson.java</url>
+          <line>166</line>
           <properties />
-          <option name="timeStamp" value="46" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/dao/DaoInsuranceContract.java</url>
-          <line>358</line>
-          <properties />
-          <option name="timeStamp" value="50" />
+          <option name="timeStamp" value="64" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -856,177 +805,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-csv/1.5/commons-csv-1.5.jar!/org/apache/commons/csv/CSVParser.class" />
-    <entry file="jar://C:/Program Files/Java/jdk-11/lib/src.zip!/java.base/java/lang/NumberFormatException.java" />
-    <entry file="jar://C:/Program Files/Java/jdk-11/lib/src.zip!/java.base/java/lang/Integer.java" />
-    <entry file="jar://C:/Program Files/Java/jdk-11/lib/src.zip!/java.base/java/lang/String.java" />
-    <entry file="file://$USER_HOME$/Downloads/IValidate.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/dict/PersonStatus.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/5.1.25/mysql-connector-java-5.1.25.jar!/com/mysql/jdbc/SQLError.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="156" column="22" selection-start-line="156" selection-start-column="22" selection-end-line="156" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/5.1.25/mysql-connector-java-5.1.25.jar!/com/mysql/jdbc/ConnectionImpl.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="1994" selection-start-line="1994" selection-end-line="1994" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/validate/IValidate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="40" lean-forward="true" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dao/test_dao.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/api/IEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="15" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dao/IDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="15" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/demo/Demo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="44" selection-start-line="44" selection-end-line="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/utils/InsuranceWriter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="67" selection-start-line="67" selection-end-line="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/internal/runners/statements/InvokeMethod.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/rules/RunRules.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/runner/JUnitCore.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="71" selection-start-line="71" selection-end-line="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/8.0.13/mysql-connector-java-8.0.13.jar!/com/mysql/cj/jdbc/exceptions/SQLError.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="55" selection-start-line="55" selection-end-line="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/8.0.13/mysql-connector-java-8.0.13.jar!/com/mysql/cj/jdbc/exceptions/SQLExceptionsMapping.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="73" selection-start-line="73" selection-end-line="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/8.0.13/mysql-connector-java-8.0.13.jar!/com/mysql/cj/jdbc/StatementImpl.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="1028" selection-start-line="1028" selection-end-line="1028" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/utils/IFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/api/IIndemnifiedPerson.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" selection-start-line="30" selection-end-line="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/rules/ExpectedException.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="100" selection-start-line="100" selection-end-line="100" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/runners/BlockJUnit4ClassRunner.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="49" selection-start-line="49" selection-end-line="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/data/LegalPerson.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dao/DaoLegalPerson.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="42" selection-start-line="42" selection-end-line="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#DaoLegalPerson#0;class#DaoLegalPerson#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/validate/ValidateIndemnifiedPerson.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="24" column="56" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/validate/ValidatePrivatePerson.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/validate/ValidateInsuranceContract.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/validate/ValidateLegalPerson.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -1041,99 +819,86 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/internal/runners/statements/RunBefores.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/runners/model/FrameworkMethod.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/AppTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="450" column="40" selection-start-line="450" selection-start-column="40" selection-end-line="450" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" column="30" selection-start-line="30" selection-start-column="18" selection-end-line="32" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/InsuranceContracts.iml">
+    <entry file="jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/8.0.13/mysql-connector-java-8.0.13.jar!/com/mysql/cj/jdbc/NonRegisteringDriver.class" />
+    <entry file="file://$PROJECT_DIR$/insurance_contracts_indemnifiedpersonstable.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/service/InsuranceContract.java">
+    <entry file="file://$PROJECT_DIR$/jdbctemplate-config.xml" />
+    <entry file="file://$PROJECT_DIR$/InsuranceContracts.iml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1122">
-          <caret line="84" column="5" selection-start-line="84" selection-start-column="5" selection-end-line="84" selection-end-column="5" />
-          <folding>
-            <element signature="method#getContractDate#0;class#InsuranceContract#0" />
-            <element signature="method#getContractEffectiveDate#0;class#InsuranceContract#0" />
-            <element signature="method#getContractExpireDate#0;class#InsuranceContract#0" />
-            <element signature="method#getCustomer#0;class#InsuranceContract#0" />
-            <element signature="method#sortInsurancePersonByName#0;class#InsuranceContract#0" />
-            <element signature="method#sortInsurancePersonBirthDate#0;class#InsuranceContract#0" />
-            <element signature="method#indemnifiedPersonDateIsValid#0;class#InsuranceContract#0" />
-            <element signature="method#indemnifiedPersonIdIsValid#0;class#InsuranceContract#0" />
-            <element signature="method#insuredSumByLambda#0;class#InsuranceContract#0" />
-          </folding>
+        <state relative-caret-position="17">
+          <caret line="1" column="41" selection-start-line="1" selection-start-column="41" selection-end-line="1" selection-end-column="41" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/runners/ParentRunner.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2550">
-          <caret line="203" selection-start-line="203" selection-end-line="203" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/data/IndemnifiedPerson.java">
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding>
-            <element signature="method#IndemnifiedPerson#0;class#IndemnifiedPerson#0" />
-            <element signature="method#getLastName#0;class#IndemnifiedPerson#0" />
-            <element signature="method#getFirstName#0;class#IndemnifiedPerson#0" />
-            <element signature="method#getMiddleName#0;class#IndemnifiedPerson#0" />
-            <element signature="method#getBirthDate#0;class#IndemnifiedPerson#0" />
-            <element signature="method#getCost#0;class#IndemnifiedPerson#0" />
-            <element signature="method#getFullName#0;class#IndemnifiedPerson#0" />
-            <element signature="method#setId#0;class#IndemnifiedPerson#0" />
-            <element signature="method#setLastName#0;class#IndemnifiedPerson#0" />
-            <element signature="method#setFirstName#0;class#IndemnifiedPerson#0" />
-            <element signature="method#setMiddleName#0;class#IndemnifiedPerson#0" />
-            <element signature="method#setBirthDate#0;class#IndemnifiedPerson#0" />
-            <element signature="method#getNameWithInitials#0;class#IndemnifiedPerson#0" />
-          </folding>
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dao/DaoIndemnifiedPerson.java">
+    <entry file="file://$PROJECT_DIR$/jdbc-template-config.xml" />
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/3.0.0.RELEASE/spring-beans-3.0.0.RELEASE.jar!/org/springframework/beans/BeanWrapperImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="609" selection-start-line="609" selection-end-line="609" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/3.0.0.RELEASE/spring-beans-3.0.0.RELEASE.jar!/org/springframework/beans/AbstractPropertyAccessor.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/3.0.0.RELEASE/spring-beans-3.0.0.RELEASE.jar!/org/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="274" selection-start-line="274" selection-end-line="274" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/3.0.0.RELEASE/spring-beans-3.0.0.RELEASE.jar!/org/springframework/beans/factory/support/AbstractBeanFactory.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="94" selection-start-line="94" selection-end-line="94" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/3.0.0.RELEASE/spring-beans-3.0.0.RELEASE.jar!/org/springframework/beans/factory/support/DefaultListableBeanFactory.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6018">
+          <caret line="417" selection-start-line="417" selection-end-line="417" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/3.0.0.RELEASE/spring-context-3.0.0.RELEASE.jar!/org/springframework/context/support/AbstractApplicationContext.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2244">
-          <caret line="155" selection-start-line="155" selection-end-line="155" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#update#0;class#DaoIndemnifiedPerson#0" />
-          </folding>
+          <caret line="209" selection-start-line="209" selection-end-line="209" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/3.0.0.RELEASE/spring-context-3.0.0.RELEASE.jar!/org/springframework/context/support/ClassPathXmlApplicationContext.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/3.0.0.RELEASE/spring-beans-3.0.0.RELEASE.jar!/org/springframework/beans/factory/support/DefaultSingletonBeanRegistry.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1751">
+          <caret line="129" selection-start-line="129" selection-end-line="129" />
         </state>
       </provider>
     </entry>
@@ -1161,26 +926,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dao/DaoInsuranceContract.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2975">
-          <caret line="187" selection-start-line="187" selection-end-line="187" />
-          <folding>
-            <element signature="method#hasContractById#0;class#DaoInsuranceContract#0" />
-            <element signature="method#addPersonsToDb#0;class#DaoInsuranceContract#0" />
-            <element signature="method#ReadPersonsFromDb#0;class#DaoInsuranceContract#0" />
-            <element signature="method#addInsuranceContractsIndemnifiedPersonsTable#0;class#DaoInsuranceContract#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/8.0.13/mysql-connector-java-8.0.13.jar!/com/mysql/cj/jdbc/NonRegisteringDriver.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="70" selection-start-line="70" selection-end-line="70" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/data/PrivatePerson.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -1205,10 +950,81 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/api/ILegalPerson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/demo/Demo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dict/PersonStatus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/InsuranceContract.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding>
+            <element signature="method#getContractDate#0;class#InsuranceContract#0" />
+            <element signature="method#getContractEffectiveDate#0;class#InsuranceContract#0" />
+            <element signature="method#getContractExpireDate#0;class#InsuranceContract#0" />
+            <element signature="method#getCustomer#0;class#InsuranceContract#0" />
+            <element signature="method#sortInsurancePersonByName#0;class#InsuranceContract#0" />
+            <element signature="method#sortInsurancePersonBirthDate#0;class#InsuranceContract#0" />
+            <element signature="method#indemnifiedPersonDateIsValid#0;class#InsuranceContract#0" />
+            <element signature="method#indemnifiedPersonIdIsValid#0;class#InsuranceContract#0" />
+            <element signature="method#insuredSumByLambda#0;class#InsuranceContract#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/runners/model/FrameworkMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+          <folding>
+            <element signature="e#870#1063#0" expanded="true" />
+            <element signature="e#1062#1063#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/internal/runners/statements/InvokeMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/internal/runners/statements/RunBefores.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/rules/RunRules.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/utils/Factory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="56" column="31" selection-start-line="56" selection-start-column="31" selection-end-line="56" selection-end-column="31" />
+        <state relative-caret-position="571">
+          <caret line="89" selection-start-line="89" selection-end-line="89" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#createInsuranceContract#0;class#Factory#0" />
@@ -1217,10 +1033,91 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/api/ILegalPerson.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/Assert.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+        <state relative-caret-position="181">
+          <caret line="72" selection-start-line="72" selection-end-line="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/rules/ExpectedException.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="100" selection-start-line="100" selection-end-line="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/runners/BlockJUnit4ClassRunner.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="49" selection-start-line="49" selection-end-line="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/runners/ParentRunner.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="419">
+          <caret line="240" selection-start-line="240" selection-end-line="240" />
+          <folding>
+            <element signature="e#2111#2112#0" expanded="true" />
+            <element signature="e#2155#2156#0" expanded="true" />
+            <element signature="e#5951#6086#0" expanded="true" />
+            <element signature="e#6085#6086#0" expanded="true" />
+            <element signature="e#6484#6648#0" expanded="true" />
+            <element signature="e#6647#6648#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/runner/JUnitCore.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="76" selection-start-line="76" selection-end-line="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/jdbc-template-config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="48" selection-start-line="11" selection-start-column="48" selection-end-line="11" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dao/IDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/validate/ValidateIndemnifiedPerson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dao/DaoLegalPerson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="142" selection-start-line="142" selection-end-line="142" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/data/LegalPerson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="20" column="34" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -1231,12 +1128,116 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dao/DaoPrivatePerson.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/data/IndemnifiedPerson.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="141" column="47" selection-start-line="141" selection-start-column="26" selection-end-line="141" selection-end-column="47" />
+        <state relative-caret-position="459">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+          <folding>
+            <element signature="method#getLastName#0;class#IndemnifiedPerson#0" />
+            <element signature="method#getFirstName#0;class#IndemnifiedPerson#0" />
+            <element signature="method#getMiddleName#0;class#IndemnifiedPerson#0" />
+            <element signature="method#getBirthDate#0;class#IndemnifiedPerson#0" />
+            <element signature="method#getCost#0;class#IndemnifiedPerson#0" />
+            <element signature="method#getFullName#0;class#IndemnifiedPerson#0" />
+            <element signature="method#setId#0;class#IndemnifiedPerson#0" />
+            <element signature="method#setLastName#0;class#IndemnifiedPerson#0" />
+            <element signature="method#setFirstName#0;class#IndemnifiedPerson#0" />
+            <element signature="method#setMiddleName#0;class#IndemnifiedPerson#0" />
+            <element signature="method#setBirthDate#0;class#IndemnifiedPerson#0" />
+            <element signature="method#getNameWithInitials#0;class#IndemnifiedPerson#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dao/PrivatePersonMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dao/DaoPrivatePerson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2392">
+          <caret line="197" column="33" selection-start-line="197" selection-start-column="33" selection-end-line="197" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dao/DaoInsuranceContract.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-482">
+          <caret line="159" column="73" selection-start-line="159" selection-start-column="73" selection-end-line="159" selection-end-column="73" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#hasContractById#0;class#DaoInsuranceContract#0" />
+            <element signature="method#addInsuranceContractsIndemnifiedPersonsTable#0;class#DaoInsuranceContract#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dao/DaoIndemnifiedPerson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-146">
+          <caret line="113" column="31" selection-start-line="113" selection-start-column="31" selection-end-line="113" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dao/LegalPersonMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dao/IndemnifiedPersonMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="57" selection-start-line="11" selection-start-column="48" selection-end-line="11" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dao/InsuranceContractMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="13" column="58" selection-start-line="13" selection-start-column="58" selection-end-line="13" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/AppTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="619">
+          <caret line="479" lean-forward="true" selection-start-line="479" selection-end-line="479" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1760#2321#0" />
+            <element signature="e#2327#2674#0" />
+            <element signature="e#2680#3209#0" />
+            <element signature="e#5673#5998#0" />
+            <element signature="e#6005#6334#0" />
+            <element signature="e#6716#7070#0" />
+            <element signature="e#7077#7561#0" />
+            <element signature="e#8899#9177#0" />
+            <element signature="e#9183#9544#0" />
+            <element signature="e#9550#13853#0" />
+            <marker date="1544402989903" expanded="true" signature="17597:18761" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1258,7 +1259,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited>No facets are configured</last-edited>
+          <last-edited>Spring</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

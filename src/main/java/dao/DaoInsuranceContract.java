@@ -3,8 +3,12 @@ package dao;
 import api.*;
 import dict.PersonStatus;
 import dao.DaoPrivatePerson;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.jdbc.core.JdbcTemplate;
 import utils.Factory;
 
+import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -23,6 +27,14 @@ public class DaoInsuranceContract implements IDao<IInsuranceContract> {
     String password = "root";
     String insuranceContractsTableName = "insuranceContractsTable";
     String insuranceContractsIndemnifiedPersonsTableName = "insuranceContractsIndemnifiedPersonsTable";
+
+    private DataSource dataSource;
+    private JdbcTemplate jdbcTemplate;
+
+    public void setDataSource(DataSource dataSource) {
+        this.dataSource = dataSource;
+        this.jdbcTemplate = new JdbcTemplate(dataSource);
+    }
 
     public DaoInsuranceContract() {
         try {
@@ -59,9 +71,9 @@ public class DaoInsuranceContract implements IDao<IInsuranceContract> {
     public void create(IInsuranceContract contract) {
         addCustomerToDb(contract.getCustomer());
         addPersonsToDb(contract.getIndemnifiedPersonCollection());
-        try {
-            Statement statement = null;
-            statement = connection.createStatement();
+//        try {
+//            Statement statement = null;
+//            statement = connection.createStatement();
 
 
             String rawQuery = "INSERT INTO "
@@ -72,48 +84,56 @@ public class DaoInsuranceContract implements IDao<IInsuranceContract> {
                     + ",contractExpireDate"
                     + ",customerId"
                     + ",customerStatus)"
-                    + " VALUES ("
-                    + contract.getId() + ","
+                    + " VALUES (?, ?, ?, ?, ?, ?);";
+              /*      + contract.getId() + ","
                     + "\"" + contract.getContractDate() + "\","
                     + "\"" + contract.getContractEffectiveDate() + "\","
                     + "\"" + contract.getContractExpireDate() + "\","
                     + contract.getCustomer().getId() + ","
                     + "\"" + contract.getCustomer().getStatus().toString() + "\""
-                    + ");";
+                    + ");";*/
 
-            statement.executeUpdate(rawQuery);
+       /*     statement.executeUpdate(rawQuery);
             addInsuranceContractsIndemnifiedPersonsTable(contract);
+*/
+        jdbcTemplate.update(
+                rawQuery
+                , contract.getId()
+                , contract.getContractDate().toString()
+                , contract.getContractEffectiveDate().toString()
+                , contract.getContractExpireDate().toString()
+                , contract.getCustomer().getId()
+                , contract.getCustomer().getStatus()
+        );
 
-        } catch (Exception ex) {
+ /*       } catch (Exception ex) {
             ex.printStackTrace();
-        }
+        }*/
 
     }
 
     @Override
     public IInsuranceContract read(long id) {
-        try {
-            Statement statement = null;
-            statement = connection.createStatement();
+//        try {
+//            Statement statement = null;
+//            statement = connection.createStatement();
+//
+//            if (!hasContractById(id)) {
+//                throw new Exception("Didn't find contract in db");
+//            }
 
-            if (!hasContractById(id)) {
-                throw new Exception("Didn't find contract in db");
-            }
-
-            ResultSet result = statement.executeQuery("SELECT "
-                    + " id "
-                    + ",contractDate"
-                    + ",contractEffectiveDate"
-                    + ",contractExpireDate"
-                    + ",customerId"
-                    + ",customerStatus"
-                    + " FROM "
-                    + insuranceContractsTableName
-                    + " WHERE id ="
-                    + id
-                    + ";"
-            );
-            result.next();
+        String rawQuery = "SELECT "
+                + " id "
+                + ",contractDate"
+                + ",contractEffectiveDate"
+                + ",contractExpireDate"
+                + ",customerId"
+                + ",customerStatus"
+                + " FROM "
+                + insuranceContractsTableName
+                + " WHERE id = ?;"
+                ;
+           /* result.next();
             LocalDate contractDate = result.getDate("contractDate").toLocalDate();
             LocalDate contractEffectiveDate = result.getDate("contractEffectiveDate").toLocalDate();
             LocalDate contractExpireDate = result.getDate("contractExpireDate").toLocalDate();
@@ -134,14 +154,21 @@ public class DaoInsuranceContract implements IDao<IInsuranceContract> {
             ex.printStackTrace();
         }
 
-        return null;
+        return null;*/
+
+        IInsuranceContract insuranceContract = (IInsuranceContract) jdbcTemplate.queryForObject(
+                rawQuery, new Object[]{id}, new InsuranceContractMapper()
+        );
+
+        ReadPersonsFromDb( insuranceContract);
+        return insuranceContract;
     }
 
     @Override
     public void update(IInsuranceContract contract) {
         try {
-            Statement statement = null;
-            statement = connection.createStatement();
+//            Statement statement = null;
+//            statement = connection.createStatement();
 
             if (!hasContractById(contract.getId())) {
                 throw new Exception("Didn't find contract in db");
@@ -149,17 +176,26 @@ public class DaoInsuranceContract implements IDao<IInsuranceContract> {
             updateCustomerFromDb(contract.getCustomer());
             UpdatePersonsFromDb(contract);
 
-            String rawQuery = " UPDATE "
+            String rawSql = " UPDATE "
                     + insuranceContractsTableName
-                    + " SET "
-                    + "contractDate=\"" + contract.getContractDate().toString() + "\","
-                    + "contractEffectiveDate=\"" + contract.getContractEffectiveDate().toString() + "\","
-                    + "contractExpireDate=\"" + contract.getContractExpireDate().toString() + "\","
-                    + "customerId=\"" + contract.getCustomer().getId() + "\","
-                    + "customerStatus=\"" + contract.getCustomer().getStatus() + "\""
-                    + " WHERE id = " + contract.getId()
-                    + ";";
-            statement.executeUpdate(rawQuery);
+                    + " SET contractDate = ?,"
+                    + "contractEffectiveDate = ?,"
+                    + "contractExpireDate = ?,"
+                    + "customerId = ?,"
+                    + "customerStatus = ?"
+                    + " WHERE id = ?;";
+
+            jdbcTemplate.update(
+                    rawSql
+                    , insuranceContractsTableName
+                    , contract.getContractDate().toString()
+                    , contract.getContractExpireDate().toString()
+                    , contract.getContractExpireDate().toString()
+                    , contract.getCustomer().getId()
+                    , contract.getCustomer().getStatus()
+                    , contract.getId()
+            );
+
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -168,20 +204,18 @@ public class DaoInsuranceContract implements IDao<IInsuranceContract> {
     @Override
     public void delete(long id) {
         try {
-            Statement statement = null;
-            statement = connection.createStatement();
+//            Statement statement = null;
+//            statement = connection.createStatement();
 
             if (!hasContractById(id)) {
                 throw new Exception("Didn't find contract in db");
             }
             deleteCustomerFromDb(id);
             deleteInsuranceContractsIndemnifiedPersonsTable(id);
-            statement.executeUpdate(" DELETE FROM "
-                    + insuranceContractsTableName
-                    + " WHERE id = "
-                    + id
-                    + ";"
-            );
+            String rawSql =" DELETE FROM ? WHERE id = ?;";
+
+            jdbcTemplate.update(rawSql, insuranceContractsTableName, id);
+
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -217,7 +251,7 @@ public class DaoInsuranceContract implements IDao<IInsuranceContract> {
         }
     }
 
-    private ICustomer readCustomerFromDb(Long customerId, PersonStatus status) {
+   /* private ICustomer readCustomerFromDb(Long customerId, PersonStatus status) {
         if (status == PersonStatus.privatePerson) {
             DaoPrivatePerson privatePerson = new DaoPrivatePerson();
             return privatePerson.read(customerId);
@@ -226,9 +260,9 @@ public class DaoInsuranceContract implements IDao<IInsuranceContract> {
             return legalPerson.read(customerId);
         }
 
-    }
+    }*/
 
-    private void deleteCustomerFromDb(Long contractId){
+    private void deleteCustomerFromDb(Long contractId) {
         try {
             Statement statement = null;
             statement = connection.createStatement();
@@ -246,12 +280,12 @@ public class DaoInsuranceContract implements IDao<IInsuranceContract> {
             PersonStatus status = PersonStatus.valueOf(result.getString("customerStatus"));
             if (status == PersonStatus.privatePerson) {
                 DaoPrivatePerson daoPrivatePerson = new DaoPrivatePerson();
-                    daoPrivatePerson.delete(customerId);
-                } else {
+                daoPrivatePerson.delete(customerId);
+            } else {
                 DaoLegalPerson daoLegalPerson = new DaoLegalPerson();
-                    daoLegalPerson.delete(customerId);
-                }
-        }catch (Exception ex){
+                daoLegalPerson.delete(customerId);
+            }
+        } catch (Exception ex) {
             ex.printStackTrace();
         }
 
@@ -277,6 +311,9 @@ public class DaoInsuranceContract implements IDao<IInsuranceContract> {
 
     private void addPersonsToDb(HashMap<Long, IIndemnifiedPerson> personHashMap) {
         if (personHashMap.size() != 0) {
+            // context should be passed to insurance contract dao
+//            ApplicationContext context = new ClassPathXmlApplicationContext("jdbc-template-config.xml");
+//            DaoIndemnifiedPerson personDao = (DaoIndemnifiedPerson) context.getBean("jdbcTemplateIndemnifiedPersonDao");
             DaoIndemnifiedPerson personDao = new DaoIndemnifiedPerson();
             for (IIndemnifiedPerson person : personHashMap.values()) {
                 if (!personDao.hasPersonById(person.getId())) {

@@ -1,12 +1,15 @@
 package dao;
 
 import api.ILegalPerson;
-import utils.Factory;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+
+import org.springframework.jdbc.core.JdbcTemplate;
+
+import javax.sql.DataSource;
 
 public class DaoLegalPerson implements IDao<ILegalPerson> {
 
@@ -16,6 +19,14 @@ public class DaoLegalPerson implements IDao<ILegalPerson> {
     String name = "root";
     String password = "root";
     String legalPersonsTableName = "legalPersonsTable";
+
+    private DataSource dataSource;
+    private JdbcTemplate jdbcTemplate;
+
+    public void setDataSource(DataSource dataSource) {
+        this.dataSource = dataSource;
+        this.jdbcTemplate = new JdbcTemplate(dataSource);
+    }
 
     public DaoLegalPerson() {
         try {
@@ -38,81 +49,98 @@ public class DaoLegalPerson implements IDao<ILegalPerson> {
 
     @Override
     public void create(ILegalPerson legalPerson) {
-        try {
-            Statement statement = null;
-            statement = connection.createStatement();
-            String rawQuery = "INSERT INTO "
-                    + legalPersonsTableName
-                    + "(id"
-                    + ",organizationName"
-                    + ",address)"
-                    + " VALUES ("
-                    + legalPerson.getId() + ","
-                    + "\"" + legalPerson.getOrganizationName() + "\","
-                    + "\"" + legalPerson.getAddress() + "\""
-                    + ");";
+//        try {
+//            Statement statement = null;
+//            statement = connection.createStatement();
+        String rawQuery = "INSERT INTO "
+                + legalPersonsTableName
+                + "(id"
+                + ",organizationName"
+                + ",address)"
+                + " VALUES ( ?, ?, ?, ?);";
+//                    + legalPerson.getId() + ","
+//                    + "\"" + legalPerson.getOrganizationName() + "\","
+//                    + "\"" + legalPerson.getAddress() + "\""
+//                    + ");";
 
-            statement.executeUpdate(rawQuery);
+//            statement.executeUpdate(rawQuery);
 
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
+        jdbcTemplate.update(
+                rawQuery
+                , legalPerson.getId()
+                , legalPerson.getOrganizationName()
+                , legalPerson.getAddress()
+        );
+//       } catch (Exception ex) {
+//            ex.printStackTrace();
+//        }
     }
 
     @Override
     public ILegalPerson read(long id) {
-        try {
-            Statement statement = null;
-            statement = connection.createStatement();
+/*
+            try {
+                Statement statement = null;
+                statement = connection.createStatement();
 
-            if (!hasLegalPersonById(id)) {
-                throw new Exception("Didn't find legalPerson in db");
+                if (!hasLegalPersonById(id)) {
+                    throw new Exception("Didn't find legalPerson in db");
+                }
+*/
+        String rawQuery = "SELECT "
+                + " id "
+                + ",organizationName"
+                + ",address"
+                + " FROM "
+                + legalPersonsTableName
+                + " WHERE id = ?;";
+
+        ILegalPerson person = (ILegalPerson) jdbcTemplate.queryForObject(
+                rawQuery, new Object[]{id}, new LegalPersonMapper()
+        );
+        return person;
+            /*
+                    ResultSet result = statement.executeQuery(
+                );
+                result.next();
+                String organizationName = result.getString("organizationName");
+                String address = result.getString("address");
+                Factory factory = new Factory();
+                return (ILegalPerson) factory.createCustomer(
+                        id
+                        , organizationName
+                        , address);
+
+            } catch (Exception ex) {
+                ex.printStackTrace();
             }
 
-            ResultSet result = statement.executeQuery("SELECT "
-                    + " id "
-                    + ",organizationName"
-                    + ",address"
-                    + " FROM "
-                    + legalPersonsTableName
-                    + " WHERE id ="
-                    + id
-                    + ";"
-            );
-            result.next();
-            String organizationName = result.getString("organizationName");
-            String address = result.getString("address");
-            Factory factory = new Factory();
-            return (ILegalPerson) factory.createCustomer(
-                    id
-                    , organizationName
-                    ,address);
-
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-
-        return null;
+            return null;
+        */
     }
 
     @Override
     public void update(ILegalPerson legalPerson) {
         try {
-            Statement statement = null;
-            statement = connection.createStatement();
+//                Statement statement = null;
+//                statement = connection.createStatement();
 
             if (!hasLegalPersonById(legalPerson.getId())) {
                 throw new Exception("Didn't find legalPerson in db");
             }
 
-            statement.executeUpdate(" UPDATE "
-                    + legalPersonsTableName
-                    + " SET "
-                    + "organizationName=\"" + legalPerson.getOrganizationName() + "\","
-                    + "address=\"" + legalPerson.getAddress() + "\""
-                    + " WHERE id = " + legalPerson.getId()
-                    + ";"
+            String rawSql = " UPDATE ?"
+                    + " SET organizationName = ?, "
+                    + "address = ?"
+                    + " WHERE id = ?;";
+            jdbcTemplate.update(
+                    rawSql
+                    , legalPersonsTableName
+                    , legalPerson.getId()
+                    , legalPerson.getOrganizationName()
+                    , legalPerson.getAddress()
             );
+
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -121,19 +149,17 @@ public class DaoLegalPerson implements IDao<ILegalPerson> {
     @Override
     public void delete(long id) {
         try {
-            Statement statement = null;
-            statement = connection.createStatement();
+//                Statement statement = null;
+//                statement = connection.createStatement();
 
             if (!hasLegalPersonById(id)) {
                 throw new Exception("Didn't find legalPerson in db");
             }
 
-            statement.executeUpdate(" DELETE FROM "
-                    + legalPersonsTableName
-                    + " WHERE id = "
-                    + id
-                    + ";"
-            );
+            String rawSql = " DELETE FROM ? WHERE id = ?;";
+
+            jdbcTemplate.update(rawSql, legalPersonsTableName, id);
+
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -141,14 +167,14 @@ public class DaoLegalPerson implements IDao<ILegalPerson> {
 
     public boolean hasLegalPersonById(long id) {
         try {
+
+            connection = DriverManager.getConnection(url, name, password);
             Statement statement = null;
             statement = connection.createStatement();
             ResultSet result = statement.executeQuery(" SELECT* "
                     + " FROM "
                     + legalPersonsTableName
-                    + " WHERE id ="
-                    + id
-                    + ";"
+                    + " WHERE id = ?;"
             );
             return result.next();
         } catch (Exception ex) {

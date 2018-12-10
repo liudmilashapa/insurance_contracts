@@ -4,11 +4,9 @@ import dao.DaoInsuranceContract;
 import dao.DaoLegalPerson;
 import dao.DaoPrivatePerson;
 import data.IndemnifiedPerson;
-import data.LegalPerson;
 import dict.PersonStatus;
 import org.junit.*;
 
-import org.junit.jupiter.api.BeforeEach;
 import service.InsuranceContract;
 import utils.*;
 import org.junit.rules.ExpectedException;
@@ -29,6 +27,9 @@ import java.io.Reader;
 import java.io.BufferedWriter;
 import java.nio.file.Paths;
 import java.nio.file.Files;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class AppTest {
 
@@ -123,7 +124,7 @@ public class AppTest {
         date2 = LocalDate.of(1999, 12, 9);
         date3 = LocalDate.of(2000, 10, 10);
         date4 = LocalDate.of(2010, 12, 9);
-        date5 = LocalDate.of(2018, 12, 9);
+        date5 = LocalDate.now().plusDays(2);
 
         indemnifiedPerson1 = factory.createIndemnifiedPerson(1, "Ros", "Bob", "Endy", date1, 1000);
         indemnifiedPerson2 = factory.createIndemnifiedPerson(2, "Ros", "Liz", "Bob", date2, 2000);
@@ -421,7 +422,19 @@ public class AppTest {
     @Test
     public void DaoInsuranceContractCreate() {
 
-        daoIndemnifiedPerson = new DaoIndemnifiedPerson();
+        ApplicationContext context = new ClassPathXmlApplicationContext("jdbc-template-config.xml");
+
+        daoIndemnifiedPerson = (DaoIndemnifiedPerson) context.getBean("jdbcTemplateIndemnifiedPersonDao");
+
+        daoIndemnifiedPerson.create(indemnifiedPerson1);
+        IIndemnifiedPerson resultPerson = daoIndemnifiedPerson.read(indemnifiedPerson1.getId());
+        Assert.assertEquals( indemnifiedPerson1.getId(), resultPerson.getId() );
+        Assert.assertEquals( indemnifiedPerson1.getFirstName(), resultPerson.getFirstName() );
+        Assert.assertEquals( indemnifiedPerson1.getLastName(), resultPerson.getLastName() );
+        Assert.assertEquals( indemnifiedPerson1.getMiddleName(), resultPerson.getMiddleName() );
+        Assert.assertEquals( indemnifiedPerson1.getBirthDate(), resultPerson.getBirthDate() );
+        Assert.assertEquals( Double.compare( indemnifiedPerson1.getCost(), resultPerson.getCost() ), 0 );
+
         daoLegalPerson = new DaoLegalPerson();
         daoPrivatePerson = new DaoPrivatePerson();
         daoInsuranceContract = new DaoInsuranceContract();

@@ -18,6 +18,11 @@
                 </plugin>
             </plugins>
         </pluginManagement>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
     </build>
 
     <properties>
@@ -40,6 +45,11 @@
             <version>8.0.13</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>3.0.0.RELEASE</version>
+        </dependency>
 
 
         <dependency>
